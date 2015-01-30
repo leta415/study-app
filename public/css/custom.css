@@ -2,3 +2,25 @@ body {
 	font-family: 'Lato', sans-serif;
 	padding-top: 50px;
 }
+
+.row {
+	min-height: 50px;
+	padding-top: 15px;
+	text-align: center;
+}
+
+.spacing {
+	height: 30px;
+}
+
+#row1 {
+	background-color:lavenderblush;
+}
+
+#row2 {
+	background-color:lightcyan;
+}
+
+#row3 {
+	background-color:lavender;
+}
