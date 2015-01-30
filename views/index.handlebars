@@ -1,8 +1,7 @@
-<!doctype html>
-
-<html>
-<head>
-	<title>HCI Project Portfolio</title>	
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Study Buddy</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -15,39 +14,44 @@
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->        
-</head>
+    <![endif]-->     
+  </head>
 
-<body>
-	<div class="container">
-		<!-- h1 through h6 are headers. The higher the number, the smaller the header -->
-		<!-- p means paragraph -->
-		<div class="jumbotron">
-			<h1>Michael Bernstein</h1>
-			<p>human-computer interaction &middot; social computing &middot; crowdsourcing</p>
-		</div>
+  <body>
 
-		<ol>
-			{{#each projects}}
-				<li><a href="#{{id}}">{{name}}</a></li>
-			{{/each}}
-		</ol>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Study Buddy</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
 
-		<h4>Projects</h4>
-		<!-- divs are invisible structuring elements that stack vertically by default. Use them to organize your code -->
-		<!-- img tags are images. Lorem Pixel will deliver random images; handy! -->
-		<!-- a are anchors, also known as hyperlinks. Use the href attribute to tell the browser where to go when the user clicks -->
-		{{#each projects}}
-		<div class="project" id="{{id}}">
-			<a href="project/{{name}}" class="thumbnail">
-				<img src="images/{{image}}" class="img">
-					<p>{{name}}</p>
-			</a>
-		</div>
-		{{/each}}
-	</div>
+    <div class="container-fluid">
+    	{{#each row}}
+    	<div class="row">
+    		{{#each icon}}
+    		<div class="col-xs-6 col-md-4">{{name}}</div>
+    		{{/each}}
+    	</div>
+    	{{/each}}
+    </div><!-- /.container -->
+
 
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
-</body>
+  </body>
 </html>
