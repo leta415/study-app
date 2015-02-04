@@ -14,14 +14,8 @@ body {
 	height: 30px;
 }
 
-#row1 {
-	background-color:lavenderblush;
-}
-
-#row2 {
-	background-color:lightcyan;
-}
-
-#row3 {
-	background-color:lavender;
+.icon {
+	width: 100px;
+	height: 100px;
+	margin-bottom: 15px;
 }
