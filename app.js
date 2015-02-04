@@ -29,6 +29,10 @@ app.use(express.session());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 
+['img'].forEach(function (dir){
+    app.use('/'+dir, express.static(__dirname+'/'+dir));
+});
+
 // development only
 if ('development' == app.get('env')) {
   app.use(express.errorHandler());
