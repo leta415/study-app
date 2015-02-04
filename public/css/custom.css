@@ -1,11 +1,11 @@
 body {
 	font-family: 'Lato', sans-serif;
-	/*padding-top: 50px;*/
 }
 
 .navbar-static-top {
   margin-bottom: 19px;
 }
+
 .row {
 	min-height: 50px;
 	padding-top: 15px;
@@ -13,8 +13,12 @@ body {
 	text-align: center;
 }
 
+.col-xs-6 {
+	padding-top: 20px;
+}
+
 .spacing {
-	height: 30px;
+	height: 10px;
 }
 
 .icon {
