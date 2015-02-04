@@ -55,52 +55,19 @@
 		</form>
     </div>
 
-<!--     <div class="spacing"></div> -->
-    
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-6 col-md-4">
-          <img src="/img/books.png" class="icon" /><br />
-          <a href="../classes/">Classes</a></div>
-        <div class="col-xs-6 col-md-4"><a href="../recent/">
-          <img src="/img/recent.png" class="icon" /><br />
-          Recent Spots</a></div>
-        <div class="col-xs-6 col-md-4"><a href="../groups/">
-          <img src="/img/group.png" class="icon" /><br />
-          My Groups</a></div>
-<!--       </div> -->
-<!--       <div class="row"> -->
-        <div class="col-xs-6 col-md-4"><a href="../friends/">
-          <img src="/img/friend.png" class="icon" /><br />
-          Friends</a></div>
-        <div class="col-xs-6 col-md-4"><a href="../checkIn/">
-          <img src="/img/checkin.png" class="icon" /><br />
-          Check-ins</a></div>
-        <div class="col-xs-6 col-md-4"><a href="../map/">
-          <img src="/img/map.png" class="icon" /><br />
-          Map</a></div>
-<!--       </div> -->
-     <!--  <div class="row"> -->
-        <div class="col-xs-6 col-md-4"><a href="../bookmark/">
-          <img src="/img/favorite.png" class="icon" /><br />
-          Bookmarks</a></div>
-        <div class="col-xs-6 col-md-4"><a href="../lucky/">
-          <img src="/img/lucky.png" class="icon" /><br />
-          I'm feeling lucky</a></div>
-        <div class="col-xs-6 col-md-4"><a href="../settings/">
-          <img src="/img/settings.png" class="icon" /><br />
-          Settings</a></div>
-      </div>
-    </div>
 
-     	<!--{{#each row}}
+    <div class="container">
     	<div class="row">
-    		{{#each icon}}
-    		<div class="col-xs-6 col-md-4">{{name}}</div>
+    		{{#each icons}}
+    		<div class="col-xs-6 col-md-4">
+          <a href="../lucky/">
+            <img src="/img/{{img}}" class="icon" />
+            <p>{{name}}</p>
+          </a>
+        </div>
     		{{/each}}
     	</div>
-    	{{/each}} 
-    </div> /.container --> 
+    </div> 
 
 
 	<script src="https://code.jquery.com/jquery.js"></script>

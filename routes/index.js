@@ -7,31 +7,40 @@ exports.view = function(req, res) {
   res.render('index', {
     "icons": [
       {
-        "name" : "test"
+        "name" : "Classes",
+        "img"  : "books.png"
       },
       {
-        "name" : "test2"
+        "name" : "Recent Spots",
+        "img"  : "recent.png"
       },
       {
-        "name" : "test3"
+        "name" : "My Groups",
+        "img"  : "group.png"
       },
       {
-        "name" : "test4"
+        "name" : "Friends",
+        "img"  : "friend.png"
       },
       {
-        "name" : "test5"
+        "name" : "Check-ins",
+        "img"  : "checkin.png"
       },
       {
-        "name" : "test6"
+        "name" : "Map",
+        "img"  : "map.png"
       },
       {
-        "name" : "test7"
+        "name" : "Bookmarks",
+        "img"  : "favorite.png"
       },
       {
-        "name" : "test8"
+        "name" : "I'm feeling lucky",
+        "img"  : "lucky.png"
       },
       {
-        "name" : "test9"
+        "name" : "Settings",
+        "img"  : "settings.png"
       }
     ]
   });
