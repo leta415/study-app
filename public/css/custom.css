@@ -1,8 +1,11 @@
 body {
 	font-family: 'Lato', sans-serif;
-	padding-top: 50px;
+	/*padding-top: 50px;*/
 }
 
+.navbar-static-top {
+  margin-bottom: 19px;
+}
 .row {
 	min-height: 50px;
 	padding-top: 15px;
