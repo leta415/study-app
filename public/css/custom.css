@@ -6,11 +6,10 @@ body {
   margin-bottom: 19px;
 }
 
-.row {
+.menu {
 	min-height: 50px;
 	padding-top: 15px;
 	padding-bottom: 15px;
-	text-align: center;
 }
 
 .col-xs-6 {
@@ -22,11 +21,14 @@ body {
 }
 
 .icon {
-	width: 100px;
-	height: 100px;
-	margin-bottom: 15px;
+	max-width: 100px;
+	padding-bottom: 15px;
+	display: block;
+	margin: auto;
 }
 
 .menu-item {
+	display: inline-block;
 	margin-bottom: 35px;
+	text-align: center;
 }
