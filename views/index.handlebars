@@ -40,6 +40,7 @@
       </div>
     </nav>
 
+    <!-- Search -->
     <div class="container">
 		<form class="navbar-form" role="search">
 			<div class="input-group">
@@ -55,12 +56,12 @@
 		</form>
     </div>
 
-
+    <!-- Menu items -->
     <div class="container">
     	<div class="row">
-    		{{#each icons}}
+    		{{#each menu-items}}
     		<div class="col-xs-6 col-md-4">
-          <a href="../lucky/">
+          <a href="../{{page}}/">
             <img src="/img/{{img}}" class="icon" />
             <p>{{name}}</p>
           </a>
