@@ -54,3 +54,12 @@ body {
 	margin-bottom: 35px;
 	text-align: center;
 }
+
+td > h5 {
+	font-family: 'Lato', sans-serif;
+	font-size: 12pt;
+}
+
+td > h5 > small {
+	font-size: 9pt;
+}
