@@ -10,6 +10,7 @@ var handlebars = require('express3-handlebars')
 
 var index = require('./routes/index');
 var map = require('./routes/map');
+var friend = require('./routes/friends');
 // Example route
 // var user = require('./routes/user');
 
@@ -42,24 +43,10 @@ if ('development' == app.get('env')) {
 // Add routes here
 app.get('/', index.view);
 app.get('/map', map.viewMap);
+app.get('/friends', friend.viewFriends);
 // Example route
 // app.get('/users', user.list);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
-
-// Handlebars.registerHelper('grouped_each', function(every, context, options) {
-//     var out = "", subcontext = [], i;
-//     if (context && context.length > 0) {
-//         for (i = 0; i < context.length; i++) {
-//             if (i > 0 && i % every === 0) {
-//                 out += options.fn(subcontext);
-//                 subcontext = [];
-//             }
-//             subcontext.push(context[i]);
-//         }
-//         out += options.fn(subcontext);
-//     }
-//     return out;
-// });
