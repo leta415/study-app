@@ -43,7 +43,7 @@ body {
 }
 
 .icon {
-	max-width: 100px;
+	/*max-width: 100px;*/
 	padding-bottom: 15px;
 	display: block;
 	margin: auto;
@@ -53,6 +53,8 @@ body {
 	display: inline-block;
 	margin-bottom: 35px;
 	text-align: center;
+	padding-right: 0px;
+	padding-left: 0px;
 }
 
 h3 {
