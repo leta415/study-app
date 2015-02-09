@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <style type="text/css">
-      html, body, #map-canvas { height: 100%; margin: 0; padding: 0;}
-    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <link href="/css/introHCI.css" rel="stylesheet">
+    <link href="/css/custom.css" rel="stylesheet">
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
     <script type="text/javascript"
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQRjMnj-tHPC2FnAE8xhQ-HyoiUHeYQdQ">
     </script>
@@ -19,7 +22,12 @@
       google.maps.event.addDomListener(window, 'load', initialize);
     </script>
   </head>
+
   <body>
-    <div id="map-canvas"></div>
+    <div class="row-fluid">
+      <div id="map-canvas" class="col-xs-8"></div>
+      <div class="col-xs-4">hey</div>
+    </div>
   </body>
+
 </html>
