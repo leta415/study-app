@@ -86,3 +86,7 @@ td > h5 > small {
 	font-size: 14px;
 	font-weight: 300;
 }
+
+#results-panels {
+	margin-top: 15px;
+}
