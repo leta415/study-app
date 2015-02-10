@@ -9,7 +9,7 @@ exports.view = function(req, res) {
       {
         "name" : "Classes",
         "img"  : "books.png",
-        "page" : "books"
+        "page" : "classes"
       },
       {
         "name" : "Recent Spots",
@@ -19,7 +19,7 @@ exports.view = function(req, res) {
       {
         "name" : "My Groups",
         "img"  : "group.png",
-        "page" : "groups"
+        "page" : "group"
       },
       {
         "name" : "Friends",
