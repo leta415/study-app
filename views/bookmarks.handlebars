@@ -9,7 +9,8 @@
     <link href="/css/custom.css" rel="stylesheet">
     <link href="/css/custom.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css" />
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -41,13 +42,66 @@
       </div>
     </nav>
 
+   <!-- <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+        <h3 id="myModalLabel">Delete</h3>
+      </div>
+      <div class="modal-body">
+        <p></p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true" >Cancel</button>
+        <button class="btn red" id="btnYes" data-dismiss="modal">Confirm</button>
+      </div>
+    </div>-->
+
+
     <div class="container">
       <h3>Bookmarks</h3>
-      Insert friendly information here.
-    </div>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th><p>Location</p></th>
+            <th><p>Date Added</p></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="btnDelete" data-id="1">
+            <td><h5>Geisel</h5></td>
+            <td><h5>2-5-2015</h5></td>
+            <td><a href="#" class="btn btnDelete">Delete</a></td>
+          </tr>
+          <tr class="btnDelete" data-id="2">
+            <td><h5>CSE Labs</h5></td>
+            <td><h5>2-5-2015</h5></td>
+            <td><a href="#" class="btn btnDelete">Delete</a></td>
+          </tr>
+        </tbody>
+      </table>  
+    </div> <!--end of container -->
 
+    <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+              <h3 class="modal-title" id="myModalLabel">Delete</h3>
+          </div>
+          <div class="modal-body">
+              <p> Are you sure you want to DELETE?</p>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="button" data-dismiss="modal" class="btn btn-danger">Confirm</button>
+          </div>
+        </div>
+      </div>
+   </div> 
 
-  	<script src="https://code.jquery.com/jquery.js"></script>
-  	<script src="/js/bootstrap.min.js"></script>
+  	<script src="/js/jquery-1.11.0.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script src="/js/delete-bookmarks.js"></script>
   </body>
 </html>
