@@ -9,16 +9,13 @@
       </tr>
     </thead>
     <tbody>
+      {{#each friends}}
       <tr>
-        <td><h5>Jamie Yang <br/><small>Interviews, CSE 170</small></h5></td>
-        <td><h5>Geisel</h5></td>
-        <td><h5>2-5-2015, 5:16pm</h5></td>
+        <td><h5>{{name}}<br/><small>{{topics}}</small></h5></td>
+        <td><h5>{{location}}</h5></td>
+        <td><h5>{{checkinTime}}</h5></td>
       </tr>
-      <tr>
-        <td><h5>Heather Lee <br/><small>CSE 170, CSE 141</small></h5></td>
-        <td><h5>CSE Labs</h5></td>
-        <td><h5>2-5-2015, 5:16pm</h5></td>
-      </tr>
+      {{/each}}
     </tbody>
   </table>    
 </div>
