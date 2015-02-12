@@ -1,4 +1,4 @@
-// Get recent spot data
+// Get bookmarks data
 var data = require('../public/json/bookmarks.json');
 
 exports.list = function(req, res) {

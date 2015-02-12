@@ -1,0 +1,28 @@
+{
+	"friends": [
+		{
+			"name": "Jamie Yang",
+			"topics": "Interviews, CSE 170",
+			"location": "Geisel",
+			"checkinTime": "2-5-2015, 5:16pm"		
+		},
+		{
+			"name": "Heather Lee",
+			"topics": "CSE 170, CSE 141",
+			"location": "CSE Labs",
+			"checkinTime": "2-1-2015, 7:00pm"		
+		},
+		{
+			"name": "Leta He",
+			"topics": "CSE 131",
+			"location": "Price Center",
+			"checkinTime": "1-29-2015, 12:00pm"		
+		},
+		{
+			"name": "John Watson",
+			"topics": "Interviews",
+			"location": "Geisel",
+			"checkinTime": "2-5-2015, 7:39pm"		
+		}
+	]
+}
