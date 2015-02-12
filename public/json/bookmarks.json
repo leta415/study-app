@@ -1,0 +1,19 @@
+{
+	"bookmarks": [
+		{
+			"name": "Geisel",
+			"date": "2-5-2015",
+			"id": "1"		
+		},
+		{
+			"name": "CSE Labs",
+			"date": "2-1-2015",
+			"id": "2"		
+		},
+		{
+			"name": "Price Center",
+			"date": "1-29-2015",
+			"id": "3"		
+		}
+	]
+}

@@ -9,16 +9,13 @@
       </tr>
     </thead>
     <tbody>
-      <tr class="btnDelete" data-id="1">
-        <td><h5>Geisel</h5></td>
-        <td><h5>2-5-2015</h5></td>
+      {{#each bookmarks}}
+      <tr class="btnDelete" data-id="{{id}}">
+        <td><h5>{{name}}</h5></td>
+        <td><h5>{{date}}</h5></td>
         <td><a href="#" class="btnDelete btn" data-toggle="modal" data-target="#myModal">Delete</a></td>
       </tr>
-      <tr class="btnDelete" data-id="2">
-        <td><h5>CSE Labs</h5></td>
-        <td><h5>2-5-2015</h5></td>
-        <td><a href="#" class="btnDelete btn" data-toggle="modal" data-target="#myModal">Delete</a></td>
-      </tr>
+      {{/each}}
     </tbody>
   </table>  
 </div> <!--end of container -->
