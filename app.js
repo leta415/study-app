@@ -64,6 +64,15 @@ app.get('/bookmarks', bookmarks.list);
 app.get('/lucky', lucky.view);
 app.get('/settings', settings.list);
 app.get('/classes', classes.list);
+
+app.get('/login', function(req, res){
+  res.render('login');
+});
+
+app.get('/signup', function(req, res){
+  res.render('signup');
+});
+
 // Example route
 // app.get('/users', user.list);
 

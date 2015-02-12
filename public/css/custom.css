@@ -91,3 +91,9 @@ td > h5 > small {
 	margin-top: 15px;
 
 }
+
+.form-signin {
+  max-width: 630px;
+  padding: 15px;
+  margin: 0 auto;
+}
