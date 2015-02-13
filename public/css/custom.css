@@ -25,17 +25,13 @@ body {
 }
 
 .navbar-static-top {
-  margin-bottom: 19px;
+  margin-bottom: 0px;
 }
 
 .menu {
 	min-height: 50px;
-	padding-top: 15px;
-	padding-bottom: 15px;
-}
-
-.col-xs-6 {
-	padding-top: 20px;
+/*	padding-top: 3%;
+	padding-bottom: 15px;*/
 }
 
 .spacing {
@@ -51,10 +47,14 @@ body {
 
 .menu-item {
 	display: inline-block;
-	margin-bottom: 35px;
+	margin-bottom: 30px;
 	text-align: center;
 	padding-right: 0px;
 	padding-left: 0px;
+}
+
+#menu-container {
+	padding: 5% 5% 0px 5%;  /*top right bottom left*/
 }
 
 h3 {
@@ -96,4 +96,8 @@ td > h5 > small {
   max-width: 630px;
   padding: 15px;
   margin: 0 auto;
+}
+
+#search-places-row {
+	margin-top: 3%;
 }

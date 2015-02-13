@@ -145,13 +145,14 @@ function initialize() {
     startLocMarker.setVisible(true);
 
 
+    // Initialize an info window
     var index;
     infoWindow = null;
     infoWindow = new google.maps.InfoWindow({
       content: "holding..."
     });
 
-
+    // Make markers and associate with appropriate info windows
     for (index = 0; index < defaultLocations.length; index++) {
       currentLocation = defaultLocations[index];
 
@@ -171,6 +172,8 @@ function initialize() {
   }
   // End of autocompleteCallback function
 
+
+  $("#search-places-input").focus();
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
