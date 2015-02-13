@@ -5,6 +5,11 @@ priceCenter = new google.maps.LatLng(32.87967, -117.23653);
 apm = new google.maps.LatLng(32.87903, -117.24103);
 biomed = new google.maps.LatLng(32.87665, -117.23701);
 defaultLocations = [geisel, cselabs, priceCenter, apm, biomed];
+defaultLocations[0][0] = "Geisel Library";
+defaultLocations[1][0] = "Computer Science Labs";
+defaultLocations[2][0] = "Price Center";
+defaultLocations[3][0] = "Applied Physics and Mathematics Building";
+defaultLocations[4][0] = "Biomedical Library";
 /////////////////////////////////
 
 // Initialize map
@@ -137,7 +142,7 @@ function initialize() {
         position: currentLocation,
         map: map,
         clickable: true,
-        html: "<strong>Testing</strong>"
+        html: "<strong>" + defaultLocations[index][0] +"</strong>"
       });
 
       google.maps.event.addListener(newMarker, 'click', function() {
