@@ -122,11 +122,28 @@ function initialize() {
     startLocMarker.setPosition(place.geometry.location);
     startLocMarker.setVisible(true);
 
+
     var index;
+    infoWindow = null;
+    infoWindow = new google.maps.InfoWindow({
+      content: "holding..."
+    });
+
+
     for (index = 0; index < defaultLocations.length; index++) {
-      var marker = new google.maps.Marker({
-        position: defaultLocations[index],
-        map: map
+      currentLocation = defaultLocations[index];
+
+      var newMarker = new google.maps.Marker({
+        position: currentLocation,
+        map: map,
+        clickable: true,
+        html: "<strong>Testing</strong>"
+      });
+
+      google.maps.event.addListener(newMarker, 'click', function() {
+        //this.info.open(map, newMarker);
+        infoWindow.setContent(this.html);
+        infoWindow.open(map, this);
       });
     }
     // var address = '';
