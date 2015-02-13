@@ -70,13 +70,37 @@ function initialize() {
   var autocomplete = new google.maps.places.Autocomplete(input);
   autocomplete.bindTo('bounds', map);
 
+  // Search places enter key
+  $("#search-places-input").keypress(function(e) {
+    if (e.which == 13) {
+      e.preventDefault();
+    }
+  });
+
   // var startLocInfowindow = new google.maps.InfoWindow();
   var startLocMarker = new google.maps.Marker({
     map: map,
     // anchorPoint: new google.maps.Point(0, -29)
   });
 
-  google.maps.event.addListener(autocomplete, 'place_changed', function() {
+  google.maps.event.addListener(autocomplete, 'place_changed', autocompleteCallback);
+    // function() {
+
+    // var address = '';
+    // if (place.address_components) {
+    //   address = [
+    //     (place.address_components[0] && place.address_components[0].short_name || ''),
+    //     (place.address_components[1] && place.address_components[1].short_name || ''),
+    //     (place.address_components[2] && place.address_components[2].short_name || '')
+    //   ].join(' ');
+    // }
+
+    // origInfowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
+    // origInfowindow.open(map, origMarker);
+  // }); 
+
+  // Callbback for search places google autocomplete
+  function autocompleteCallback() {
     // Destroy original current location
     if (origInfowindow) {
       google.maps.event.clearInstanceListeners(origInfowindow);  // just in case handlers continue to stick around
@@ -144,27 +168,8 @@ function initialize() {
         infoWindow.open(map, this);
       });
     }
-    // var address = '';
-    // if (place.address_components) {
-    //   address = [
-    //     (place.address_components[0] && place.address_components[0].short_name || ''),
-    //     (place.address_components[1] && place.address_components[1].short_name || ''),
-    //     (place.address_components[2] && place.address_components[2].short_name || '')
-    //   ].join(' ');
-    // }
-
-    // origInfowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
-    // origInfowindow.open(map, origMarker);
-  }); 
-  // End of addListener for autocomplete
-
-
-  // Search places enter key
-  $("#search-places-input").keyup(function(event) {
-    if (event.keyCode == 13) {
-      $("#search-places-enter").click();
-    }
-  });
+  }
+  // End of autocompleteCallback function
 
 }
 
