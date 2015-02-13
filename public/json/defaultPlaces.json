@@ -1,0 +1,29 @@
+{
+    "places" : [
+        {
+            "name" : "Geisel Library", 
+            "lat"  : "32.88120",
+            "long" : "-117.23750"
+        },
+        {
+            "name" : "Computer Science Labs",
+            "lat"  : "32.88180",
+            "long" : "-117.23352"
+        },
+        {
+            "name" : "Price Center",
+            "lat"  : "32.87967",
+            "long" : "-117.23653"
+        },
+        {
+            "name" : "Applied Physics and Mathematics Building",
+            "lat"  : "32.87903",
+            "long" : "-117.24103"
+        },
+        {
+            "name" : "Biomedical Library",
+            "lat"  : "32.87665",
+            "long" : "-117.23701"
+        }
+    ]
+}
