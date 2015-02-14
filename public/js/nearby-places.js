@@ -11,10 +11,10 @@ defaultLocations[2][0] = "Price Center";
 defaultLocations[3][0] = "Applied Physics and Mathematics Building";
 defaultLocations[4][0] = "Biomedical Library";
 /////////////////////////////////
+var origInfowindow;
 
 // Initialize map
 (function() {
-
   if(!!navigator.geolocation) {
 
     var mapOptions = {
@@ -102,7 +102,7 @@ function initialize() {
   // Callbback for search places google autocomplete
   function autocompleteCallback() {
     // Destroy original current location
-    if (origInfowindow) {
+    if (origInfowindow != null) {
       google.maps.event.clearInstanceListeners(origInfowindow);  // just in case handlers continue to stick around
       origInfowindow.close();
       origInfowindow = null;
@@ -172,7 +172,7 @@ function initialize() {
   }
   // End of autocompleteCallback function
 
-
+  $("#search-places-input").prop("disabled", false);
   $("#search-places-input").focus();
 }
 
