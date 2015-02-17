@@ -70,11 +70,16 @@ function initialize() {
   var autocomplete = new google.maps.places.Autocomplete(input);
   autocomplete.bindTo('bounds', map);
 
-  // Search places enter key
+  // Define click listener for search places enter key
   $("#search-places-input").keypress(function(e) {
     if (e.which == 13) {
       e.preventDefault();
     }
+  });
+
+  // Define click listener for search places search button
+  $("#search-places-enter").click(function(e) {
+    e.preventDefault();
   });
 
   // var startLocInfowindow = new google.maps.InfoWindow();
