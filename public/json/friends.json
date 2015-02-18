@@ -2,27 +2,39 @@
 	"friends": [
 		{
 			"name": "Jamie Yang",
+			"username": "jyang",
 			"topics": "Interviews, CSE 170",
 			"location": "Geisel",
-			"checkinTime": "2-5-2015, 5:16pm"		
+			"locationDetail": "2nd floor East",
+			"checkinTime": "2-5-2015, 5:16pm",
+			"id": "1"		
 		},
 		{
 			"name": "Heather Lee",
+			"username": "hlee",
 			"topics": "CSE 170, CSE 141",
 			"location": "CSE Labs",
-			"checkinTime": "2-1-2015, 7:00pm"		
+			"locationDetail": "270",
+			"checkinTime": "2-1-2015, 7:00pm",
+			"id": "2"		
 		},
 		{
 			"name": "Leta He",
+			"username": "lhe",
 			"topics": "CSE 131",
 			"location": "Price Center",
-			"checkinTime": "1-29-2015, 12:00pm"		
+			"locationDetail": "2nd floor couch area",
+			"checkinTime": "1-29-2015, 12:00pm",
+			"id": "3"		
 		},
 		{
 			"name": "John Watson",
+			"username": "jwatson",
 			"topics": "Interviews",
 			"location": "Geisel",
-			"checkinTime": "2-5-2015, 7:39pm"		
+			"locationDetail": "5th floor cube",
+			"checkinTime": "2-5-2015, 7:39pm",
+			"id": "4"		
 		}
 	]
 }

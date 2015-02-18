@@ -1,21 +1,45 @@
+<div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+          <h3 class="modal-title" id="myModalLabel">Delete</h3>
+      </div>
+      <div class="modal-body">
+          <p> Are you sure you want to DELETE?</p>
+      </div>
+      <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" data-dismiss="modal" class="btn btn-danger" id="btnDelteYes">Confirm</button>
+      </div>
+    </div>
+  </div>
+</div> 
+
 <div class="container">
   <h3>Friends</h3>
-  <table class="table table-hover">
+  <table class="table">
     <thead>
       <tr>
         <th><p>Name</p></th>
+        <th><p>Username</p></th>
         <th><p>Location</p></th>
         <th><p>Last Check-In</p></th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
       {{#each friends}}
-      <tr>
+      <tr class="btnDelete" data-id="{{id}}">
         <td><h5>{{name}}<br/><small>{{topics}}</small></h5></td>
-        <td><h5>{{location}}</h5></td>
+        <td><h5>{{username}}</h5></td>
+        <td><h5>{{location}}<br/><small>{{locationDetail}}</small></h5></td>
         <td><h5>{{checkinTime}}</h5></td>
+        <td><a href="#" class="btnDelete btn" data-target="#myModal">Delete</a></td>
       </tr>
       {{/each}}
     </tbody>
   </table>    
 </div>
+
+<script src="/js/delete-bookmarks.js"></script>
