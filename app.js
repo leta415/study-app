@@ -3,7 +3,18 @@
  * Module dependencies.
  */
 
-var express = require('express');
+var express = require('express'),
+    logger = require('morgan'),
+    cookieParser = require('cookie-parser'),
+    bodyParser = require('body-parser'),
+    methodOverride = require('method-override'),
+    session = require('express-session'),
+    passport = require('passport'),
+    LocalStrategy = require('passport-local'),
+    TwitterStrategy = require('passport-twitter'),
+    GoogleStrategy = require('passport-google'),
+    FacebookStrategy = require('passport-facebook');
+    
 var http = require('http');
 var path = require('path');
 var handlebars = require('express3-handlebars')
@@ -36,11 +47,13 @@ app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 app.use(express.favicon());
 app.use(express.logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.methodOverride());
-app.use(express.cookieParser('Intro HCI secret key'));
+
+app.use(cookieParser("Secret here"));
 app.use(express.session());
+
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 
