@@ -6,6 +6,11 @@ $(document).ready(function() {
     	"paging": false,
     	"info": false
     });
+
+    $('#bookmarksTable').DataTable({
+    	"paging": false,
+    	"info": false
+    });
 } );
 
 //delete friends
