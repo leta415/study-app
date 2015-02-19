@@ -1,14 +1,14 @@
 <div class="container">
-  <form class="form-signin" action="/">
+  <form class="form-signin" action="/local-reg" id="local-reg" method="post">
     <h2 class="form-signin-heading">Sign Up</h2><br />
     <label for="inputUsername" class="sr-only">Username</label>
-    <input type="username" id="inputUsername" class="form-control" placeholder="Username" required autofocus>
+    <input type="username" name="username" id="inputUsername" class="form-control" placeholder="Username" required autofocus>
     <br />
-    <label for="inputEmail" class="sr-only">Username</label>
+    <label for="inputEmail" name="email" class="sr-only">Username</label>
     <input type="email" id="inputEmail" class="form-control" placeholder="E-mail" required autofocus>
     <br />
     <label for="inputPassword" class="sr-only">Password</label>
-    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+    <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
     <br />
     <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
   </form>
