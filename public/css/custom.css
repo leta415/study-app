@@ -4,6 +4,11 @@
     	max-width: 60px;	
 
     }
+
+    .addIcon {
+    	max-width: 40px;	
+
+    }
 }
 
 /* Extra Small Devices, Phones */ 
@@ -11,12 +16,20 @@
 	.icon {
 		max-width: 30%;
 	}
+
+	.addIcon {
+		max-width: 50px;
+	}
 }
 
 /* Small Devices, Tablets */
 @media only screen and (min-width : 768px) {
 	.icon {
 		max-width: 100px;
+	}
+
+	.addIcon {
+		max-width: 50px;
 	}
 }
 
@@ -43,6 +56,12 @@ body {
 	padding-bottom: 15px;
 	display: block;
 	margin: auto;
+}
+
+.addIcon {
+	margin-bottom:10px;  
+	display: block;
+	margin: right;
 }
 
 .menu-item {

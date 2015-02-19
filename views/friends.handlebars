@@ -1,4 +1,26 @@
+<!--modal for adding friends -->
 <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+          <h3 class="modal-title" id="myModalLabel">Search for friends</h3>
+      </div>
+      <div class="modal-body input-group">
+          <input type="text" class="form-control" placeholder="Search with username...">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button" id="search">Go!</button>
+          </span>
+      </div>
+      <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div> 
+
+<!--modal for deleting friends -->
+<div id="my1Modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -25,7 +47,7 @@
         <th><p>Username</p></th>
         <th><p>Location</p></th>
         <th><p>Last Check-In</p></th>
-        <th></th>
+        <th><a href="#" class="btnAdd" data-target="#myModal"><img src="/img/addFriend.png" class="addIcon img-responsive" /></a></th>
       </tr>
     </thead>
     <tbody>
@@ -35,7 +57,7 @@
         <td><h5>{{username}}</h5></td>
         <td><h5>{{location}}<br/><small>{{locationDetail}}</small></h5></td>
         <td><h5>{{checkinTime}}</h5></td>
-        <td><a href="#" class="btnDelete btn" data-target="#myModal">Delete</a></td>
+        <td><a href="#" class="btnDelete btn" data-target="#my1Modal">Delete</a></td>
       </tr>
       {{/each}}
     </tbody>
