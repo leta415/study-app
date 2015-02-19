@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css" />
     <link href="/css/custom.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://cdn.datatables.net/1.10.5/css/jquery.dataTables.min.css" />
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -39,8 +40,8 @@
                 <strong>Hi,</strong> {{user.username}}
               </p>
             </li>
-            <li><a href="../navbar/">Account Settings</a></li>
-            <li><a href="../navbar/">Log Out</a></li>
+            <li><a href="../settings">Account Settings</a></li>
+            <li><a href="../logout">Log Out</a></li>
             {{else}} 
               <li><a href="/login">Log In</a></li>
               <li><a href="/signup">Sign Up</a></li>
@@ -52,7 +53,7 @@
 
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-    
+    <script src="https://cdn.datatables.net/1.10.5/js/jquery.dataTables.min.js"></script>
      <!--where our other templates will insert-->
     {{{body}}}
 
