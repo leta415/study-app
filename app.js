@@ -176,11 +176,11 @@ passport.use('local-signup', new LocalStrategy(
 ));
 
 app.get('/login', function(req, res){
-  res.render('login');
+  res.render('login', {layout: 'index'});
 });
 
 app.get('/signup', function(req, res){
-  res.render('signup');
+  res.render('signup', {layout: 'index'});
 });
 
 
@@ -189,7 +189,7 @@ app.get('/signup', function(req, res){
 app.post('/local-reg', passport.authenticate('local-signup', {
   successRedirect: '/',
   // failureRedirect: '/signup'
-  failureRedirect: '/signup'
+  failureRedirect: '/signup',
   })
 );
 
@@ -198,7 +198,7 @@ app.post('/local-reg', passport.authenticate('local-signup', {
 app.post('/login', passport.authenticate('local-signin', { 
   successRedirect: '/',
   // failureRedirect: '/login'
-    failureRedirect: '/login'
+    failureRedirect: '/login',
   })
 );
 
