@@ -115,13 +115,13 @@ function initialize() {
     }
 
     // Change html layout to show results 
-    var resultsPanelsElem = document.getElementById("results-panels");
-    resultsPanelsElem.className = "";
-    resultsPanelsElem.className = "col-xs-12 col-md-4";
-    var mapCanvasElem = document.getElementById("map-canvas");
-    mapCanvasElem.className = "";
-    mapCanvasElem.className = "col-xs-12 col-md-8";
-    $("#results-panels").css('display', 'initial');
+    // var resultsPanelsElem = document.getElementById("results-panels");
+    // resultsPanelsElem.className = "";
+    // resultsPanelsElem.className = "col-xs-12 col-md-4";
+    // var mapCanvasElem = document.getElementById("map-canvas");
+    // mapCanvasElem.className = "";
+    // mapCanvasElem.className = "col-xs-12 col-md-8";
+    // $("#results-panels").css('display', 'initial');
 
     startLocMarker.setVisible(false);
     var place = autocomplete.getPlace();

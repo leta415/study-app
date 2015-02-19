@@ -1,7 +1,7 @@
 <div class="container">
 
       <!-- Search -->
-      <div id="search-places-row" class="row-fluid">
+      <div id="search-places-row" class="row">
         <div class="col-xs-12">
           <form class="" role="search">
             <div class="input-group">
@@ -18,25 +18,10 @@
         </div>
       </div>
 
-      <!-- Search results -->
-      <div class="row-fluid">   
-        <div id="results-panels" style="display:none">
-          
-          {{#each places}}          
-          <div class="panel panel-primary">
-            <div class="panel-body">
-              {{name}}
-            </div>
-          </div>
-          {{/each}}
-
-
-        </div>
-
-        <!-- Map -->
+      <!-- Map -->
         <div id="map-canvas" class="col-xs-12 col-md-12"></div>
       </div>
-    </div>
+</div>
 
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places"></script>
-    <script src="/js/nearby-places.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places"></script>
+<script src="/js/nearby-places.js"></script>
