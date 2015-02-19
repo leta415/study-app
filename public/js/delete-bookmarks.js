@@ -1,6 +1,13 @@
 // Get friends data
 //var data = require('../json/friends.json');
 
+$(document).ready(function() {
+    $('#friendsTable').DataTable({
+    	"paging": false,
+    	"info": false
+    });
+} );
+
 //delete friends
 $('a.btnDelete').on('click', function (e) {
     e.preventDefault();
