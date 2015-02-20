@@ -213,6 +213,7 @@ app.get('/logout', function(req, res){
 
 // Allows user to check in to the site
 app.post('/checkin', checkin.checkin);
+app.get('/search', friend.search);
 
 //============END PASSPORT=================
 
