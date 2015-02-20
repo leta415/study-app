@@ -1,16 +1,42 @@
 <div class="container">
   <h3>Check In to a Nearby Location</h3><br />
-  <form id="checkin">
-  	{{#each nearby}}
-	<div class="radio">
-	  <label>
-	    <input type="radio" name="location" id="optionRadio" value="{{name}}">
-	    {{name}}
-	  </label>
-	</div>
-	{{/each}}
-	<br /><button type="button" data-toggle="modal" id="submitBtn" data-target="#confirm-submit" class="btn btn-default">Check in</button>
-  </form>
+
+  <div class="row">
+    <form id="checkin" action="/checkin" method="post">
+      <!-- Location portion -->
+      <div class="col-md-6">
+      <h4>Location</h4>
+      <hr />
+      {{#each nearby}}
+    	<div class="radio">
+    	  <label>
+    	    <input type="radio" name="location" id="optionRadio" value="{{name}}">
+    	    {{name}}
+    	  </label>
+    	</div>
+    	{{/each}}
+      <br />
+      </div>
+
+      <div class="col-md-6">
+      <!-- Location details -->
+      <h4>Location Details <span class="optional">(optional)</span></h4>
+      <hr />
+      <input name="locDetails" class="form-control" placeholder="ie. 5th floor, rm: 559">
+      <br />
+
+      <!-- Studying details -->
+      <h4>What are you studying? <span class="optional">(optional)</span></h4>
+      <hr />
+      <input name="studyDetails" class="form-control" placeholder="ie. COGS 120/CSE 170">
+      </div>
+
+      <div class="col-md-12" style="padding-bottom: 20px;">
+      <br /><button type="button" data-toggle="modal" id="submitBtn" data-target="#confirm-submit" class="btn btn-default" style="float: right;">Check in</button>
+      </div>
+      <br /><br />
+    </form>
+  </div>
 </div>
 
 <!-- First modal pop up that will confirm user input from radio selection -->
@@ -25,7 +51,7 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                <button type="button" id="submit" data-toggle="modal" data-target="#confirm-choice" data-dismiss="modal" class="btn btn-success success">Yes</a>
+                <button type="button" data-toggle="modal" data-target="#confirm-choice" data-dismiss="modal" class="btn btn-success success">Yes</a>
               </div>
           </div>
     </div>
@@ -39,7 +65,7 @@
                 Check In Successful!
             </div>
             <div class="modal-footer">
-                <a href="/" data-toggle="modal" class="btn btn-success success">Okay</a>
+                <button type="submit" value="submit" data-toggle="modal" form="checkin" class="btn btn-success success">Okay</a>
             </div>
           </div>
     </div>

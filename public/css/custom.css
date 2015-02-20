@@ -120,3 +120,14 @@ td > h5 > small {
 #search-places-row {
 	margin-top: 3%;
 }
+
+/* For the checkin page 
+ */
+#checkin {
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+.optional {
+	color: #888888;
+}
