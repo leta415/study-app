@@ -13,8 +13,10 @@ exports.recentPlaces = function(req, res) {
 		console.log(result.body);
 	})
 	.fail(function (err) {
-		var data = require('../public/json/recent.json');
-		res.render('recent', data);
+		// var data = require('../public/json/recent.json');
+		var empty;
+		empty = {"pageName": "Recent Spots"};
+		res.render('recent', empty);
 		console.log("failed");
 	})
 

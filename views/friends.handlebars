@@ -7,12 +7,13 @@
           <h3 class="modal-title" id="myModalLabel">Search for friends</h3>
       </div>
       <div class="modal-body input-group">
-          <input type="text" class="form-control" placeholder="Search with username...">
+          <input type="text" class="form-control" placeholder="Search with username..."  name="username" action="/search" method="get" >
           <span class="input-group-btn">
             <button class="btn btn-default" type="button" id="search">Go!</button>
           </span>
       </div>
       <div class="modal-footer">
+        <div class="friendsName"></div>
           <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
       </div>
     </div>
@@ -47,7 +48,7 @@
         <th ><p>Username</p></th>
         <th ><p>Location</p></th>
         <th ><p>Last Check-In</p></th>
-        <th data-sortable="false"><a href="#" class="btnAdd" data-target="#myModal"><img src="/img/addFriend.png" class="addIcon img-responsive" /></a></th>
+        <th data-sortable="false"><a href="#" class="btnAddIcon" data-target="#myModal"><img src="/img/addFriend.png" class="addIcon img-responsive" /></a></th>
       </tr>
     </thead>
     <tbody>
