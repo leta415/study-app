@@ -42,7 +42,9 @@ function initializeSearchPlaces() {
         // }
     }); 
 
-    jQuery('#search-place-details-input').on('typeahead:selected', function (e, datum) {
+    jQuery('#search-place-details-input').on('typeahead:selected', searchCallback);
+
+    function searchCallback (e, datum) {
         console.log("datum.value: " + datum.value); //datum is place name
 
         var index = 0;
@@ -67,14 +69,14 @@ function initializeSearchPlaces() {
             $("#amenity-val-outlets").html(json.placesInfo[index].outlets);
             $("#amenity-val-coffee").html(json.placesInfo[index].coffee);
             $("#amenity-val-food").html(json.placesInfo[index].food);
-            var nameQuery = encodeURIComponent(json.placesInfo[index].name.trim()) + "UCSD";
-            var url = "https://www.google.com/maps/embed/v1/place?q=" + nameQuery + "&key=AIzaSyDQRjMnj-tHPC2FnAE8xhQ-HyoiUHeYQdQ&";
+            var nameQuery = encodeURIComponent(json.placesInfo[index].name.trim()) + "%20La Jolla,%20CA";
+            var url = "https://www.google.com/maps/embed/v1/place?q=" + nameQuery + "&key=AIzaSyDQRjMnj-tHPC2FnAE8xhQ-HyoiUHeYQdQ";
             console.log("Request for: " + url);
 
             $("#place-details-map-iframe").attr("src", url);
             $("#place-details").css("display", "initial");
         });
-    });
+    }
 
     $("#search-place-details-input").focus();
 
