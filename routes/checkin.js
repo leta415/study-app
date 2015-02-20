@@ -1,5 +1,6 @@
 exports.view = function(req, res) {
   res.render('checkin', {
+    pageName: 'Check-ins',
   	"nearby": [
   		{
   			"name": "Geisel Library"
