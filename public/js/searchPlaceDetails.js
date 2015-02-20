@@ -72,6 +72,7 @@ function initializeSearchPlaces() {
             console.log("Request for: " + url);
 
             $("#place-details-map-iframe").attr("src", url);
+            $("#place-details").css("display", "initial");
         });
     });
 

@@ -214,6 +214,6 @@ td > h5 > small {
 }
 
 #search-place-details-input {
-	width: 100%;
+	width: 100% !important;
 }
 
