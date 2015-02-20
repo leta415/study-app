@@ -102,7 +102,7 @@ if ('development' == app.get('env')) {
 
 // Simple route middleware to ensure user is authenticated.
 function ensureAuthenticated(req, res, next) {
-  if (req.isAuthenticated()) { console.log("Test"); return next(); }
+  if (req.isAuthenticated()) { return next(); }
   req.session.error = 'Please sign in!';
   res.redirect('/login');
 }
@@ -205,11 +205,14 @@ app.post('/login', passport.authenticate('local-signin', {
 //logs user out of site, deleting them from the session, and returns to homepage
 app.get('/logout', function(req, res){
   var name = req.user.username;
-  console.log("LOGGING OUT " + req.user.username)
+  console.log("LOGGING OUT " + req.user.username);
   req.logout();
   res.redirect('/');
   req.session.notice = "You have successfully been logged out " + name + "!";
 });
+
+// Allows user to check in to the site
+app.post('/checkin', checkin.checkin);
 
 //============END PASSPORT=================
 

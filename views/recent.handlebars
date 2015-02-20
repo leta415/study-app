@@ -3,15 +3,15 @@
 <table class="table">
         <thead>
           <tr>
-            <th><p>Location</p></th>
-            <th><p>Last Check-In</p></th>
+            <th><h4>Location</h4></th>
+            <th><h4>Last Check-In</h4></th>
           </tr>
         </thead>
         <tbody>
           {{#each locations}}
           <tr>
-            <td><h5>{{name}}</h5></td>
-            <td><h5>{{checkinTime}}</h5></td>
+            <td>{{location}}</td>
+            <td>{{currentTime}}</td>
           </tr>
           {{/each}}
         </tbody>

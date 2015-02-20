@@ -148,3 +148,15 @@ td > h5 > small {
 /*#place-details-map-iframe {
 	width: 460px;
 }*/
+
+
+/* For the checkin page 
+ */
+#checkin {
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+.optional {
+	color: #888888;
+}
