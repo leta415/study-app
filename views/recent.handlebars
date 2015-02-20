@@ -1,5 +1,6 @@
 <div class="container">
-<h3>Recent Places</h3>
+<h3>Recent Spots</h3>
+{{#if locations}}
 <table class="table">
         <thead>
           <tr>
@@ -16,5 +17,16 @@
           {{/each}}
         </tbody>
       </table>    
-
+{{else}}
+    <br />
+    <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">You have not checked in anywhere before.</h3>
+    </div>
+    <div class="panel-body">
+      Your recent check ins will appear on this page. <br />
+      If you would like to check in, <a href="/checkin">click here</a>.
+    </div>
+  </div>
+{{/if}}
 </div>
