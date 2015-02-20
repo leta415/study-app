@@ -1,0 +1,75 @@
+{
+    "pageName": "Place Details",
+    "placesInfo": [
+        {
+            "name"    : "Geisel Library", 
+            "hoursM"  : "7:30 am - 12:00 am",
+            "hoursT"  : "7:30 am - 12:00 am",
+            "hoursW"  : "7:30 am - 12:00 am",
+            "hoursTh" : "7:30 am - 12:00 am",
+            "hoursF"  : "7:30 am - 6:00 pm",
+            "hoursS"  : "10:00 am - 6:00 pm",
+            "hoursSu" : "10:00 am - 12:00 am",
+            "wifi"    : "yes",
+            "outlets" : "yes",
+            "food"    : "no",
+            "coffee"  : "no"
+        },
+        {
+            "name" : "Computer Science Labs",
+            "hoursM"  : "7:00am - 10:00pm",
+            "hoursT"  : "7:00am - 10:00pm",
+            "hoursW"  : "7:00am - 10:00pm",
+            "hoursTh" : "7:00am - 10:00pm",
+            "hoursF"  : "7:00am - 6:00pm",
+            "hoursS"  : "Closed",
+            "hoursSu" : "Closed",
+            "wifi"    : "yes",
+            "outlets" : "yes",
+            "food"    : "no",
+            "coffee"  : "no"
+        },
+        {
+            "name" : "Price Center",
+            "hoursM"  : "12:00am - 11:59pm",
+            "hoursT"  : "12:00am - 11:59pm",
+            "hoursW"  : "12:00am - 11:59pm",
+            "hoursTh" : "12:00am - 11:59pm",
+            "hoursF"  : "12:00am - 11:59pm",
+            "hoursS"  : "12:00am - 11:59pm",
+            "hoursSu" : "12:00am - 11:59pm",
+            "wifi"    : "yes",
+            "outlets" : "no",
+            "food"    : "yes",
+            "coffee"  : "yes"
+        },
+        {
+            "name" : "Applied Physics and Mathematics Building",
+            "hoursM"  : "12:00am - 11:59pm",
+            "hoursT"  : "12:00am - 11:59pm",
+            "hoursW"  : "12:00am - 11:59pm",
+            "hoursTh" : "12:00am - 11:59pm",
+            "hoursF"  : "12:00am - 11:59pm",
+            "hoursS"  : "12:00am - 11:59pm",
+            "hoursSu" : "12:00am - 11:59pm",
+            "wifi"    : "yes",
+            "outlets" : "yes",
+            "food"    : "no",
+            "coffee"  : "no"
+        },
+        {
+            "name" : "Biomedical Library",
+            "hoursM"  : "8:00 am - 12:00 am",
+            "hoursT"  : "8:00 am - 12:00 am",
+            "hoursW"  : "8:00 am - 12:00 am",
+            "hoursTh" : "8:00 am - 12:00 am",
+            "hoursF"  : "8:00 am - 6:00 pm",
+            "hoursS"  : "10:00 am - 6:00 pm",
+            "hoursSu" : "12:00 pm - 12:00 am",
+            "wifi"    : "yes",
+            "outlets" : "yes",
+            "food"    : "no",
+            "coffee"  : "no"
+        }
+    ]
+}
