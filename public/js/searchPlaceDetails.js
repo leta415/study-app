@@ -76,6 +76,7 @@ function initializeSearchPlaces() {
         });
     });
 
+    $("#search-place-details-input").focus();
 
 }
 
