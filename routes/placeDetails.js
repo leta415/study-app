@@ -1,4 +1,4 @@
 exports.viewGroups = function(req, res) {
-  res.render('group', {
+  res.render('placeDetails', {
   });
 };

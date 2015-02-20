@@ -9,6 +9,10 @@
     	max-width: 40px;	
 
     }
+
+    #place-details h6 {
+		font-size: 80%;
+	}
 }
 
 /* Extra Small Devices, Phones */ 
@@ -20,6 +24,10 @@
 	.addIcon {
 		max-width: 50px;
 	}
+
+	#place-details {
+		font-size: 90%;
+	}
 }
 
 /* Small Devices, Tablets */
@@ -30,6 +38,10 @@
 
 	.addIcon {
 		max-width: 50px;
+	}
+
+	#place-details {
+		font-size: 100%;
 	}
 }
 
@@ -117,6 +129,22 @@ td > h5 > small {
   margin: 0 auto;
 }
 
-#search-places-row {
+.top-search {
 	margin-top: 3%;
 }
+
+#place-details {
+	margin-top: 3%;
+}
+
+#place-details-map {
+	text-align: center;
+}
+
+/*.place-details-inner {
+	border: 2px solid black;
+}*/
+
+/*#place-details-map-iframe {
+	width: 460px;
+}*/

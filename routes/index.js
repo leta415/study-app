@@ -17,9 +17,9 @@ exports.view = function(req, res) {
         "page" : "checkin"
       },
       {
-        "name" : "My Groups",
+        "name" : "Place Details",
         "img"  : "group.png",
-        "page" : "group"
+        "page" : "placeDetails"
       },
       {
         "name" : "Bookmarks",
