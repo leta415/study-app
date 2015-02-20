@@ -186,7 +186,8 @@ td > h5 > small {
 
 .tt-dropdown-menu {
 	font-family: 'Lato', sans-serif;
-    width: 422px;
+    /*width: 422px;*/
+    width: 100%;
     margin-top: 12px;
     padding: 8px 0;
     background-color: #fff;
@@ -213,7 +214,11 @@ td > h5 > small {
     margin: 0;
 }
 
-#search-place-details-input {
-	width: 100% !important;
+.twitter-typeahead { 
+    width: 100%; 
+    margin: 0;
 }
 
+#search-place-details-input {
+    float: none;
+}
