@@ -25,7 +25,7 @@ var config = require('./config.js'), // contains all tokens and other private in
 var index = require('./routes/index');
 var map = require('./routes/map');
 var friend = require('./routes/friends');
-var group = require('./routes/group');
+var placeDetails = require('./routes/placeDetails');
 var recent = require('./routes/recent');
 var checkin = require('./routes/checkin');
 var bookmarks = require('./routes/bookmarks');
@@ -111,7 +111,7 @@ function ensureAuthenticated(req, res, next) {
 app.get('/', ensureAuthenticated, index.view);
 app.get('/map', map.viewMap);
 app.get('/friends', ensureAuthenticated, friend.viewFriends);
-app.get('/group', ensureAuthenticated, group.viewGroups);
+app.get('/placeDetails', ensureAuthenticated, placeDetails.viewGroups);
 app.get('/recent', ensureAuthenticated, recent.recentPlaces);
 app.get('/checkin', ensureAuthenticated, checkin.view);
 app.get('/bookmarks', ensureAuthenticated, bookmarks.list);
