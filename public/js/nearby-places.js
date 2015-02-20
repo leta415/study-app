@@ -63,7 +63,7 @@ var origInfowindow;
 
 
 // Initialize autocomplete places 
-function initialize() {
+function initializeNearbyPlaces() {
   var input = /** @type {HTMLInputElement} */(
     document.getElementById('search-places-input'));
 
@@ -161,18 +161,50 @@ function initialize() {
     for (index = 0; index < defaultLocations.length; index++) {
       currentLocation = defaultLocations[index];
 
+      var jsStr = 
+        "$.getJSON('/json/placesInfo.json', function(json) {" +
+          // "console.log(json);" +
+          // "console.log('trying to get json stuff of index ' + " + index + ");" +
+          // "console.log('json name: ' + json.placesInfo[" + index + "].name);" +
+          "$('#place-details-name-overlay').html(json.placesInfo[" + index + "].name);" +
+          "$('#hours-times-m-overlay').html(json.placesInfo[" + index + "].hoursM);" +
+          "$('#hours-times-t-overlay').html(json.placesInfo[" + index + "].hoursT);" +
+          "$('#hours-times-w-overlay').html(json.placesInfo[" + index + "].hoursW);" +
+          "$('#hours-times-th-overlay').html(json.placesInfo[" + index + "].hoursTh);" +
+          "$('#hours-times-f-overlay').html(json.placesInfo[" + index + "].hoursF);" +
+          "$('#hours-times-s-overlay').html(json.placesInfo[" + index + "].hoursS);" +
+          "$('#hours-times-su-overlay').html(json.placesInfo[" + index + "].hoursSu);" +
+          "$('#amenity-val-wifi-overlay').html(json.placesInfo[" + index + "].wifi);" +
+          "$('#amenity-val-outlets-overlay').html(json.placesInfo[" + index + "].outlets);" +
+          "$('#amenity-val-coffee-overlay').html(json.placesInfo[" + index + "].coffee);" +
+          "$('#amenity-val-food-overlay').html(json.placesInfo[" + index + "].food);" +
+          "var nameQuery = encodeURIComponent(json.placesInfo[" + index + "].name.trim()) + '%20La Jolla,%20CA';" +
+          "var url = 'https://www.google.com/maps/embed/v1/place?q=' + nameQuery + '&key=AIzaSyDQRjMnj-tHPC2FnAE8xhQ-HyoiUHeYQdQ';" +
+          // "console.log('Request for: ' + url);" +
+          "$('#place-details-map-iframe-overlay').attr('src', url);" +
+          "$('#place-details-overlay').css('display', 'initial');" +
+      "})";
+
       var newMarker = new google.maps.Marker({
         position: currentLocation,
         map: map,
         clickable: true,
-        html: "<strong>" + defaultLocations[index][0] +"</strong>"
+        html: "<a href='#' onclick=\"" + jsStr + "\" data-toggle='modal' data-target='#place-detail-overlay' id='place" + index + "'><strong>" + defaultLocations[index][0] +"</strong></a>"      
       });
 
       google.maps.event.addListener(newMarker, 'click', function() {
         //this.info.open(map, newMarker);
+        console.log(this.html);
         infoWindow.setContent(this.html);
         infoWindow.open(map, this);
       });
+
+      var placeID = "#place" + index;
+      $(placeID).on('hidden', function() {
+        console.log("inside click");
+        $("#place-detail-overlay").modal('show');
+      });
+
     }
   }
   // End of autocompleteCallback function
@@ -181,4 +213,4 @@ function initialize() {
   $("#search-places-input").focus();
 }
 
-google.maps.event.addDomListener(window, 'load', initialize);
+google.maps.event.addDomListener(window, 'load', initializeNearbyPlaces);

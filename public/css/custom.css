@@ -13,6 +13,10 @@
     #place-details h6 {
 		font-size: 80%;
 	}
+
+    #place-details-overlay h6 {
+        font-size: 50%;
+    }
 }
 
 /* Extra Small Devices, Phones */ 
@@ -25,9 +29,13 @@
 		max-width: 50px;
 	}
 
-	#place-details {
+	#place-details h6 {
 		font-size: 90%;
 	}
+
+    #place-details-overlay h6 {
+        font-size: 90%;
+    }    
 }
 
 /* Small Devices, Tablets */
@@ -40,9 +48,23 @@
 		max-width: 50px;
 	}
 
-	#place-details {
+	#place-details h6 {
 		font-size: 100%;
 	}
+
+    #place-details-overlay h6 {
+        font-size: 100%;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    #place-details-map {
+        margin-top: 5%;
+    }
+
+    #place-details-map-overlay {
+        margin-top: 10%;
+    }
 }
 
 body {
