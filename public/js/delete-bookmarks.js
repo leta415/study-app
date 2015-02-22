@@ -4,7 +4,8 @@
 $(document).ready(function() {
     $('#friendsTable').DataTable({
     	"paging": false,
-    	"info": false
+    	"info": false/*,
+    	"dom": '<"search">lt'*/
     });
 
     $('#bookmarksTable').DataTable({
@@ -15,6 +16,7 @@ $(document).ready(function() {
 
 //delete friends
 $('a.btnDelete').on('click', function (e) {
+    console.log("delete clicked");
     e.preventDefault();
     var id = $(this).closest('tr').data('id');
     $('#my1Modal').data('id', id).modal('show');
@@ -34,7 +36,30 @@ $('a.btnAddIcon').on('click', function (e) {
     $('#myModal').data('id', id).modal('show');
 });
 
-$('#search').click(function () {
+$('#search').click(function (e){
+    e.preventDefault();
+    function displayFriendName(json){
+        var displayName = json.name;
+        var friendUsername = json.username;
+        var html = "<ul class=\"text-left list-inline\"> <li>Name: " + displayName +"</li><li>Username: " + friendUsername + "</li><li><a href=\"#\" class=\"btnAdd btn\" >Add</a></li></ul>";
+        $('.friendsName').html(html);
+
+        //adding friend
+        $('a.btnAdd').click(function(){
+            $('#myModal').modal('toggle');
+            //get the user details and add it to friends db
+            var url = '/user/' +displayName + '/' + friendUsername;
+            $.get(url, function() {
+                    console.log("finished");
+                });
+        });
+    }
+
+    $.get('/search', displayFriendName);
+    
+});
+
+/*$('#search').click(function () {
 	console.log("search clicked");
 	var usrn = $('username').val();
 	if(usrn = "test"){
@@ -48,10 +73,4 @@ $('#search').click(function () {
 			$('#myModal').modal('toggle');
 		});
 	}
-});
-
-// $('a.btnAdd').click(function(){
-// 	console.log("add clicked");
-// 	var row = $("<tr class=\"btnDelete\" data-id=\"5\" data-dismiss=\"modal\"><td><h5>Tester<br/><small></small></h5></td><td><h5>test</h5></td><td><h5><br/><small></small></h5></td><td><h5></h5></td><td><a href=\"#\" class=\"btnDelete btn\" data-target=\"#my1Modal\">Delete</a></td></tr>");
-// 	row.appendTo($('#friendsTable'));
-// });
+});*/
