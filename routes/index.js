@@ -13,7 +13,7 @@ exports.view = function(req, res) {
         "page" : "recent"
       },
       {
-        "name" : "Check-ins",
+        "name" : "Check In",
         "img"  : "checkin.png",
         "page" : "checkin"
       },
@@ -28,7 +28,7 @@ exports.view = function(req, res) {
         "page" : "bookmarks"
       },    
       {
-        "name" : "Map",
+        "name" : "Nearby Places",
         "img"  : "map.png",
         "page" : "map"
       },

@@ -18,11 +18,14 @@
         </div>
       </div>
 
+      <!-- Place not found -->
+      <div id="place-not-found">Place not found.</div>
+
       <!-- Map -->
       <div id="map-canvas" class="col-xs-12 col-md-12"></div>
 
       <!-- Modal -->
-      <div class="modal fade" id="place-detail-overlay" role="dialog">
+      <div id="place-detail-overlay" class="modal fade" role="dialog">
         <div class="modal-dialog">
           <div class="modal-content">
               <div class="modal-body">
@@ -67,7 +70,7 @@
 
                       <!-- Map -->
                       <div id="place-details-map-overlay" class="place-details-inner col-xs-12 col-md-4">
-                          <iframe id="place-details-map-iframe-overlay" width="100%" height="200" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=Geisel%20Library%2C%20Gilman&key=AIzaSyDQRjMnj-tHPC2FnAE8xhQ-HyoiUHeYQdQ"></iframe>
+                          <iframe id="place-details-map-iframe-overlay" width="100%" height="200" frameborder="0" style="border:0"></iframe>
                       </div>
 
                   </div>
@@ -77,6 +80,7 @@
           </div>
         </div>
       </div>
+      <!-- End of modal -->
 </div>
 
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places"></script>

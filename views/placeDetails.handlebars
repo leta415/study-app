@@ -4,7 +4,8 @@
         <div class="col-xs-12 col-md-12">
           <form class="" role="search">
             <!-- <div class="input-group"> -->
-              <input id="search-place-details-input" type="text" class="form-control typeahead" placeholder="Learn more about . . .">
+              <input id="search-place-details-input" type="text" data-provide="typeahead" autocomplete="off" class="form-control" placeholder="Learn more about . . ."/>
+              <input id="search-place-details-submit" type="submit" style="position: absolute; left: -9999px; width: 1px; height: 1px;"/>
 <!--               <div class="input-group-btn">
                 <button id="search-place-details-enter" type="submit" class="btn btn-default">
                   <span class="glyphicon glyphicon-search">
@@ -17,9 +18,11 @@
         </div>
       </div>
 
+      <!-- Place not found -->
+      <div id="place-details-not-found">Place not found.</div>
+
       <!-- Place details -->
       <div id="place-details" class="row" style="display:none">
-              <!-- <div id="place-details" class="row"> -->
 
           <!-- Info -->
           <div class="place-details-inner col-xs-12 col-md-7">
@@ -60,7 +63,7 @@
 
           <!-- Map -->
           <div id="place-details-map" class="place-details-inner col-xs-12 col-md-5">
-              <iframe id="place-details-map-iframe" width="100%" height="300" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=Geisel%20Library%2C%20Gilman&key=AIzaSyDQRjMnj-tHPC2FnAE8xhQ-HyoiUHeYQdQ"></iframe>
+              <iframe id="place-details-map-iframe" width="100%" height="300" frameborder="0" style="border:0"></iframe>
           </div>
 
       </div>

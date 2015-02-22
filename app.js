@@ -115,6 +115,7 @@ app.get('/placeDetails', ensureAuthenticated, placeDetails.viewGroups);
 app.get('/recent', ensureAuthenticated, recent.recentPlaces);
 app.get('/checkin', ensureAuthenticated, checkin.view);
 app.get('/bookmarks', ensureAuthenticated, bookmarks.list);
+app.get('/bookmarks/:name', bookmarks.viewPlace);
 app.get('/lucky', lucky.view);
 app.get('/settings', ensureAuthenticated, settings.list);
 app.get('/classes', ensureAuthenticated, classes.list);

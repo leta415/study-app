@@ -2,12 +2,12 @@
 	"pageName": "Bookmarks",
 	"bookmarks": [
 		{
-			"name": "Geisel",
+			"name": "Geisel Library",
 			"date": "2-5-2015",
 			"id": "1"		
 		},
 		{
-			"name": "CSE Labs",
+			"name": "Computer Science Labs",
 			"date": "2-1-2015",
 			"id": "2"		
 		},

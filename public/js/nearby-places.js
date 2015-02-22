@@ -114,20 +114,15 @@ function initializeNearbyPlaces() {
       origMarker.setVisible(false);
     }
 
-    // Change html layout to show results 
-    // var resultsPanelsElem = document.getElementById("results-panels");
-    // resultsPanelsElem.className = "";
-    // resultsPanelsElem.className = "col-xs-12 col-md-4";
-    // var mapCanvasElem = document.getElementById("map-canvas");
-    // mapCanvasElem.className = "";
-    // mapCanvasElem.className = "col-xs-12 col-md-8";
-    // $("#results-panels").css('display', 'initial');
-
     startLocMarker.setVisible(false);
     var place = autocomplete.getPlace();
     if (!place.geometry) {
+      console.log("Place searched for was not found.");
+      $("#place-not-found").css("display", "initial");
       return;
     }
+
+    $("#place-not-found").css("display", "none");
 
     // If the place has a geometry, then present it on a map.
     if (place.geometry.viewport) {
@@ -166,6 +161,10 @@ function initializeNearbyPlaces() {
           // "console.log(json);" +
           // "console.log('trying to get json stuff of index ' + " + index + ");" +
           // "console.log('json name: ' + json.placesInfo[" + index + "].name);" +
+          "var nameQuery = encodeURIComponent(json.placesInfo[" + index + "].name.trim()) + '%20La Jolla,%20CA';" +
+          "var url = 'https://www.google.com/maps/embed/v1/place?q=' + nameQuery + '&key=AIzaSyDQRjMnj-tHPC2FnAE8xhQ-HyoiUHeYQdQ';" +
+          // "console.log('Request for: ' + url);" +
+          "$('#place-details-map-iframe-overlay').attr('src', url);" +
           "$('#place-details-name-overlay').html(json.placesInfo[" + index + "].name);" +
           "$('#hours-times-m-overlay').html(json.placesInfo[" + index + "].hoursM);" +
           "$('#hours-times-t-overlay').html(json.placesInfo[" + index + "].hoursT);" +
@@ -178,10 +177,6 @@ function initializeNearbyPlaces() {
           "$('#amenity-val-outlets-overlay').html(json.placesInfo[" + index + "].outlets);" +
           "$('#amenity-val-coffee-overlay').html(json.placesInfo[" + index + "].coffee);" +
           "$('#amenity-val-food-overlay').html(json.placesInfo[" + index + "].food);" +
-          "var nameQuery = encodeURIComponent(json.placesInfo[" + index + "].name.trim()) + '%20La Jolla,%20CA';" +
-          "var url = 'https://www.google.com/maps/embed/v1/place?q=' + nameQuery + '&key=AIzaSyDQRjMnj-tHPC2FnAE8xhQ-HyoiUHeYQdQ';" +
-          // "console.log('Request for: ' + url);" +
-          "$('#place-details-map-iframe-overlay').attr('src', url);" +
           "$('#place-details-overlay').css('display', 'initial');" +
       "})";
 
