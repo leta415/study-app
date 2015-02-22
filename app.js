@@ -110,7 +110,7 @@ function ensureAuthenticated(req, res, next) {
 // Add routes here
 app.get('/', ensureAuthenticated, index.view);
 app.get('/map', map.viewMap);
-app.get('/friends', ensureAuthenticated, friend.viewFriends);
+app.get('/friends', ensureAuthenticated, friend.displayFriends);
 app.get('/placeDetails', ensureAuthenticated, placeDetails.viewGroups);
 app.get('/recent', ensureAuthenticated, recent.recentPlaces);
 app.get('/checkin', ensureAuthenticated, checkin.view);
@@ -214,7 +214,10 @@ app.get('/logout', function(req, res){
 
 // Allows user to check in to the site
 app.post('/checkin', checkin.checkin);
-app.get('/search', friend.search);
+app.get('/search/:id', friend.search);
+app.post('/addFriend', friend.add);
+app.get('/user/:name/:id', friend.add);
+app.get('/delete', friend.deleteFriend);
 
 //============END PASSPORT=================
 

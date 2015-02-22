@@ -6,12 +6,12 @@
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
           <h3 class="modal-title" id="myModalLabel">Search for friends</h3>
       </div>
-      <div class="modal-body input-group">
-          <input type="text" class="form-control" placeholder="Search with username..."  name="username" action="/search" method="get" >
+      <form id="friends" class="modal-body input-group">
+          <input type="text" class="search form-control" placeholder="Search with username..." id="usrname">    
           <span class="input-group-btn">
-            <button class="btn btn-default" type="button" id="search">Go!</button>
+            <button class="btn btn-default" id="search">Search</button>
           </span>
-      </div>
+      </form>
       <div class="modal-footer">
         <div class="friendsName"></div>
           <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
@@ -41,6 +41,7 @@
 
 <div class="container">
     <h3>Friends</h3>
+    {{#if friends}}
   <table class="table" id="friendsTable">
     <thead>
       <tr>
@@ -62,7 +63,18 @@
       </tr>
       {{/each}}
     </tbody>
-  </table>    
+  </table>
+  {{else}}
+    <br />
+    <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">You haven't added your friends yet.</h3>
+    </div>
+    <div class="panel-body">
+      Your friends will appear on this page.
+    </div>
+  </div>
+{{/if}}    
 </div>
 
 <script src="/js/delete-bookmarks.js"></script>
