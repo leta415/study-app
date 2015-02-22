@@ -26,13 +26,13 @@ exports.displayFriends = function(req,res){
 
 exports.search = function(req, res){
 	console.log("searching!");
-	var username = req.body.username;
-	console.log(req.user.username);
-	db.search('friends', 'username:' +req.user.username)
+	var username = req.params.id;
+	console.log("query = username:" + username);
+	db.search('users', 'username:' +username)
 	.then(function(result){
 		//get json array
-		res.json(result.body.results[0].value);
-
+		console.log(result.body.results[0].value);
+		res.json(result.body.results[0].value);	
 	})
 	.fail(function(err){
 		console.log(err);
@@ -80,6 +80,7 @@ exports.add = function(req,res){
 			db.put('friends', req.user.username ,jsonObj)
 			.then(function(result){
 				console.log("added friend " + name);
+				res.redirect('/friends');
 			})
 			.fail(function(err){
 				console.log(err);
@@ -88,9 +89,41 @@ exports.add = function(req,res){
 		.fail(function(err){
 			console.log(err);
 		})
-		res.redirect('/friends');
+		
 	})
 	.fail(function(err){
+		//user hasn't checked in anywhere yet
 		console.log(err);
+		//add into user friends list
+		db.get('friends', req.user.username)
+		.then(function(result){
+			// Get the json array
+			friends = result.body.friends;
+			temp["name"] = name;
+			temp["username"] = username;
+			temp["topics"] = "";
+			temp["location"] = "";
+			temp["locationDetail"] = "";
+			temp["checkinTime"] = "";
+			var id = Math.floor((Math.random() * 100) + 1);
+			temp["id"] = id;
+			console.log(temp);
+			friends.push(temp);
+			var json = "{\"friends\": " + JSON.stringify(friends) + "}";  
+			console.log(json);
+			var jsonObj = JSON.parse(json);
+
+			db.put('friends', req.user.username ,jsonObj)
+			.then(function(result){
+				console.log("added friend " + name);
+				res.redirect('/friends');
+			})
+			.fail(function(err){
+				console.log(err);
+			})
+		})
+		.fail(function(err){
+			console.log(err);
+		})
 	})
 };

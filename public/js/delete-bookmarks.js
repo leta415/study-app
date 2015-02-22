@@ -38,8 +38,12 @@ $('a.btnAddIcon').on('click', function (e) {
 
 $('#search').click(function (e){
     e.preventDefault();
+    console.log("search clicked");
+    var usrname = $('.search').val();
+    var url = '/search/' + usrname;
+    console.log(url);
     function displayFriendName(json){
-        var displayName = json.name;
+        var displayName = json.displayName;
         var friendUsername = json.username;
         var html = "<ul class=\"text-left list-inline\"> <li>Name: " + displayName +"</li><li>Username: " + friendUsername + "</li><li><a href=\"#\" class=\"btnAdd btn\" >Add</a></li></ul>";
         $('.friendsName').html(html);
@@ -55,8 +59,8 @@ $('#search').click(function (e){
         });
     }
 
-    $.get('/search', displayFriendName);
-    
+    $.get(url, displayFriendName);
+
 });
 
 /*$('#search').click(function () {

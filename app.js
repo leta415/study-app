@@ -213,7 +213,7 @@ app.get('/logout', function(req, res){
 
 // Allows user to check in to the site
 app.post('/checkin', checkin.checkin);
-app.get('/search', friend.search);
+app.get('/search/:id', friend.search);
 app.post('/addFriend', friend.add);
 app.get('/user/:name/:id', friend.add);
 app.get('/delete', friend.deleteFriend);
