@@ -29,7 +29,6 @@ var placeDetails = require('./routes/placeDetails');
 var recent = require('./routes/recent');
 var checkin = require('./routes/checkin');
 var bookmarks = require('./routes/bookmarks');
-var lucky = require('./routes/lucky');
 var settings = require('./routes/settings');
 var classes = require('./routes/classes'); // probably going to change this
 
@@ -115,8 +114,7 @@ app.get('/placeDetails', ensureAuthenticated, placeDetails.viewGroups);
 app.get('/recent', ensureAuthenticated, recent.recentPlaces);
 app.get('/checkin', ensureAuthenticated, checkin.view);
 app.get('/bookmarks', ensureAuthenticated, bookmarks.list);
-app.get('/bookmarks/:name', bookmarks.viewPlace);
-app.get('/lucky', lucky.view);
+app.get('/bookmarks/:name', ensureAuthenticated, bookmarks.viewPlace);
 app.get('/settings', ensureAuthenticated, settings.list);
 app.get('/classes', ensureAuthenticated, classes.list);
 
@@ -213,11 +211,12 @@ app.get('/logout', function(req, res){
 });
 
 // Allows user to check in to the site
-app.post('/checkin', checkin.checkin);
-app.get('/search/:id', friend.search);
-app.post('/addFriend', friend.add);
-app.get('/user/:name/:id', friend.add);
-app.get('/delete', friend.deleteFriend);
+app.post('/checkin', ensureAuthenticated, checkin.checkin);
+app.get('/search/:id', ensureAuthenticated, friend.search);
+app.post('/addFriend', ensureAuthenticated, friend.add);
+app.get('/user/:name/:id', ensureAuthenticated, friend.add);
+app.get('/delete', ensureAuthenticated, friend.deleteFriend);
+app.get('/displayNearby', map.displayNearbyResults);
 
 //============END PASSPORT=================
 

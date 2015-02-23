@@ -1,16 +1,3 @@
-// Default study spot locations
-geisel = new google.maps.LatLng(32.88120, -117.23750);
-cselabs = new google.maps.LatLng(32.88180, -117.23352);
-priceCenter = new google.maps.LatLng(32.87967, -117.23653);
-apm = new google.maps.LatLng(32.87903, -117.24103);
-biomed = new google.maps.LatLng(32.87665, -117.23701);
-defaultLocations = [geisel, cselabs, priceCenter, apm, biomed];
-defaultLocations[0][0] = "Geisel Library";
-defaultLocations[1][0] = "Computer Science Labs";
-defaultLocations[2][0] = "Price Center";
-defaultLocations[3][0] = "Applied Physics and Mathematics Building";
-defaultLocations[4][0] = "Biomedical Library";
-/////////////////////////////////
 var origInfowindow;
 
 // Initialize map
@@ -144,65 +131,61 @@ function initializeNearbyPlaces() {
     startLocMarker.setPosition(place.geometry.location);
     startLocMarker.setVisible(true);
 
+    $.get("/displayNearby", showNearbyOnMap);
+  }
+  // End of autocompleteCallback function
 
-    // Initialize an info window
-    var index;
+
+  function showNearbyOnMap(result) {
+    // 'result' is an array of json objects that you need to call .value on
+
     infoWindow = null;
     infoWindow = new google.maps.InfoWindow({
       content: "holding..."
     });
 
-    // Make markers and associate with appropriate info windows
-    for (index = 0; index < defaultLocations.length; index++) {
-      currentLocation = defaultLocations[index];
+    for (var index = 0; index < result.length; index++) {
+      obj = result[index].value;
+      console.log("making marker for place: " + obj.name);
 
       var jsStr = 
-        "$.getJSON('/json/placesInfo.json', function(json) {" +
-          // "console.log(json);" +
-          // "console.log('trying to get json stuff of index ' + " + index + ");" +
-          // "console.log('json name: ' + json.placesInfo[" + index + "].name);" +
-          "var nameQuery = encodeURIComponent(json.placesInfo[" + index + "].name.trim()) + '%20La Jolla,%20CA';" +
+          "var nameQuery = encodeURIComponent('" + obj.name.trim() + "');" +
           "var url = 'https://www.google.com/maps/embed/v1/place?q=' + nameQuery + '&key=AIzaSyDQRjMnj-tHPC2FnAE8xhQ-HyoiUHeYQdQ';" +
-          // "console.log('Request for: ' + url);" +
           "$('#place-details-map-iframe-overlay').attr('src', url);" +
-          "$('#place-details-name-overlay').html(json.placesInfo[" + index + "].name);" +
-          "$('#hours-times-m-overlay').html(json.placesInfo[" + index + "].hoursM);" +
-          "$('#hours-times-t-overlay').html(json.placesInfo[" + index + "].hoursT);" +
-          "$('#hours-times-w-overlay').html(json.placesInfo[" + index + "].hoursW);" +
-          "$('#hours-times-th-overlay').html(json.placesInfo[" + index + "].hoursTh);" +
-          "$('#hours-times-f-overlay').html(json.placesInfo[" + index + "].hoursF);" +
-          "$('#hours-times-s-overlay').html(json.placesInfo[" + index + "].hoursS);" +
-          "$('#hours-times-su-overlay').html(json.placesInfo[" + index + "].hoursSu);" +
-          "$('#amenity-val-wifi-overlay').html(json.placesInfo[" + index + "].wifi);" +
-          "$('#amenity-val-outlets-overlay').html(json.placesInfo[" + index + "].outlets);" +
-          "$('#amenity-val-coffee-overlay').html(json.placesInfo[" + index + "].coffee);" +
-          "$('#amenity-val-food-overlay').html(json.placesInfo[" + index + "].food);" +
-          "$('#place-details-overlay').css('display', 'initial');" +
-      "})";
+          "$('#place-details-name-overlay').html('" + obj.name + "');" +
+          "$('#hours-times-m-overlay').html('" + obj.hoursM + "');" +
+          "$('#hours-times-t-overlay').html('" + obj.hoursT + "');" +
+          "$('#hours-times-w-overlay').html('" + obj.hoursW + "');" +
+          "$('#hours-times-th-overlay').html('" + obj.hoursTh + "');" +
+          "$('#hours-times-f-overlay').html('" + obj.hoursF + "');" +
+          "$('#hours-times-s-overlay').html('" + obj.hoursS + "');" +
+          "$('#hours-times-su-overlay').html('" + obj.hoursSu + "');" +
+          "$('#amenity-val-wifi-overlay').html('" + obj.wifi + "');" +
+          "$('#amenity-val-outlets-overlay').html('" + obj.outlets + "');" +
+          "$('#amenity-val-coffee-overlay').html('" + obj.coffee + "');" +
+          "$('#amenity-val-food-overlay').html('" + obj.food + "');" +
+          "$('#place-details-overlay').css('display', 'initial');";
 
       var newMarker = new google.maps.Marker({
-        position: currentLocation,
+        position: {lat: obj.lat, lng: obj.long},
         map: map,
         clickable: true,
-        html: "<a href='#' onclick=\"" + jsStr + "\" data-toggle='modal' data-target='#place-detail-overlay' id='place" + index + "'><strong>" + defaultLocations[index][0] +"</strong></a>"      
+        html: "<a href='#' onclick=\"" + jsStr + "\" data-toggle='modal' data-target='#place-detail-overlay' id='place" + index + "'><strong>" + obj.name +"</strong></a>"      
       });
 
       google.maps.event.addListener(newMarker, 'click', function() {
         //this.info.open(map, newMarker);
-        console.log(this.html);
         infoWindow.setContent(this.html);
         infoWindow.open(map, this);
       });
 
       var placeID = "#place" + index;
       $(placeID).on('hidden', function() {
-        console.log("inside click");
         $("#place-detail-overlay").modal('show');
-      });
-
+      });      
     }
   }
-  // End of autocompleteCallback function
+  // End of showNearbyOnMap
 
   $("#search-places-input").prop("disabled", false);
   $("#search-places-input").focus();

@@ -2,7 +2,9 @@
     "pageName": "Place Details",
     "placesInfo": [
         {
-            "name"    : "Geisel Library", 
+            "name"    : "Geisel Library, Gilman Drive, La Jolla, CA, United States", 
+            "lat"     : 32.88120,
+            "long"    : -117.23750,
             "hoursM"  : "7:30 am - 12:00 am",
             "hoursT"  : "7:30 am - 12:00 am",
             "hoursW"  : "7:30 am - 12:00 am",
@@ -16,7 +18,9 @@
             "coffee"  : "no"
         },
         {
-            "name" : "Computer Science Labs",
+            "name"    : "Computer Science and Engineering Building, La Jolla, CA, United States",
+            "lat"     : 32.88180,
+            "long"    : -117.23352,            
             "hoursM"  : "7:00am - 10:00pm",
             "hoursT"  : "7:00am - 10:00pm",
             "hoursW"  : "7:00am - 10:00pm",
@@ -30,7 +34,9 @@
             "coffee"  : "no"
         },
         {
-            "name" : "Price Center",
+            "name"    : "Price Center Theater, La Jolla, San Diego, CA, United States",
+            "lat"     : 32.880147,
+            "long"    : -117.237161, 
             "hoursM"  : "12:00am - 11:59pm",
             "hoursT"  : "12:00am - 11:59pm",
             "hoursW"  : "12:00am - 11:59pm",
@@ -40,11 +46,13 @@
             "hoursSu" : "12:00am - 11:59pm",
             "wifi"    : "yes",
             "outlets" : "no",
-            "food"    : "yes",
-            "coffee"  : "yes"
+            "food"    : "no",
+            "coffee"  : "no"
         },
         {
-            "name" : "Applied Physics and Mathematics Building",
+            "name"    : "Applied Physics and Mathematics Building, San Diego, CA, United States",
+            "lat"     : 32.879245,
+            "long"    : -117.241041, 
             "hoursM"  : "12:00am - 11:59pm",
             "hoursT"  : "12:00am - 11:59pm",
             "hoursW"  : "12:00am - 11:59pm",
@@ -58,7 +66,9 @@
             "coffee"  : "no"
         },
         {
-            "name" : "Biomedical Library",
+            "name"    : "Biomedical Library, La Jolla, CA, United States",
+            "lat"     : 32.875464,
+            "long"    : -117.236864, 
             "hoursM"  : "8:00 am - 12:00 am",
             "hoursT"  : "8:00 am - 12:00 am",
             "hoursW"  : "8:00 am - 12:00 am",
@@ -70,6 +80,22 @@
             "outlets" : "yes",
             "food"    : "no",
             "coffee"  : "no"
+        },
+        {
+            "name"    : "Tapioca Express, Gilman Drive, La Jolla, CA",
+            "lat"     : 32.880626,
+            "long"    : -117.236027,
+            "hoursM"  : "9:30 am - 12:00 am",
+            "hoursT"  : "9:30 am - 12:00 am",
+            "hoursW"  : "9:30 am - 12:00 am",
+            "hoursTh" : "9:30 am - 12:00 am",
+            "hoursF"  : "9:30 am - 6:00 pm",
+            "hoursS"  : "11:30 am - 12:00 am",
+            "hoursSu" : "11:30 am - 12:00 am",
+            "wifi"    : "yes",
+            "outlets" : "no",
+            "food"    : "yes",
+            "coffee"  : "yes"            
         }
     ]
 }
