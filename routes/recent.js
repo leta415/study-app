@@ -8,6 +8,7 @@ exports.recentPlaces = function(req, res) {
 	db.get('checkins', req.user.username)
 	.then(function (result) {
 		data = result.body;
+    data.locations.reverse();
 		data.pageName = "Recent Spots";
 		res.render('recent', data);
 		console.log(result.body);

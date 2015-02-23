@@ -4,7 +4,7 @@ var config = require('../config.js'), //config file contains all tokens and othe
 var data; //= require('../public/json/defaultPlaces.json');
 
 exports.viewMap = function(req, res) {
-   res.render('map', data);
+   res.render('map', {'pageName': 'Search Nearby Places'});
 };
 
 exports.displayNearbyResults = function(req, res) {

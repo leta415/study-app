@@ -30,7 +30,6 @@ var recent = require('./routes/recent');
 var checkin = require('./routes/checkin');
 var bookmarks = require('./routes/bookmarks');
 var settings = require('./routes/settings');
-var classes = require('./routes/classes'); // probably going to change this
 
 var app = express();
 
@@ -112,12 +111,11 @@ app.get('/map', map.viewMap);
 app.get('/friends', ensureAuthenticated, friend.displayFriends);
 app.get('/placeDetails', placeDetails.viewGroups);
 app.get('/recent', ensureAuthenticated, recent.recentPlaces);
-app.get('/recnt/:name', recent.viewPlace);
+app.get('/recent/:name', recent.viewPlace);
 app.get('/checkin', ensureAuthenticated, checkin.view);
 app.get('/bookmarks', ensureAuthenticated, bookmarks.list);
 app.get('/bookmarks/:name', ensureAuthenticated, bookmarks.viewPlace);
 app.get('/settings', ensureAuthenticated, settings.list);
-app.get('/classes', ensureAuthenticated, classes.list);
 
 //===============PASSPORT=================
 passport.serializeUser(function(user, done) {

@@ -4,7 +4,7 @@ var config = require('../config.js'), //config file contains all tokens and othe
 var data; // = require('../public/json/placesInfo.json');
 
 exports.viewGroups = function(req, res) {
-  res.render('placeDetails', data);
+  res.render('placeDetails', {'pageName': 'Place Details'});
 };
 
 exports.getAllPlaceNames = function(req, res) {
