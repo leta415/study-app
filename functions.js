@@ -9,8 +9,10 @@ console.log("hi");
   var deferred = Q.defer();
   var hash = bcrypt.hashSync(password, 8);
   var user = {
-    "username": username,
-    "password": hash,
+    "username"   : username,
+    "password"   : hash,
+    "displayName": username,
+    "email"      : ""
   }
   
   //check if username is already assigned in our database

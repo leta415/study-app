@@ -19,7 +19,7 @@ exports.view = function(req, res) {
       },
       {
         "name" : "Place Details",
-        "img"  : "group.png",
+        "img"  : "place.png",
         "page" : "placeDetails"
       },
       {
