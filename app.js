@@ -112,6 +112,7 @@ app.get('/map', map.viewMap);
 app.get('/friends', ensureAuthenticated, friend.displayFriends);
 app.get('/placeDetails', placeDetails.viewGroups);
 app.get('/recent', ensureAuthenticated, recent.recentPlaces);
+app.get('/recnt/:name', recent.viewPlace);
 app.get('/checkin', ensureAuthenticated, checkin.view);
 app.get('/bookmarks', ensureAuthenticated, bookmarks.list);
 app.get('/bookmarks/:name', ensureAuthenticated, bookmarks.viewPlace);

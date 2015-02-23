@@ -22,3 +22,22 @@ exports.recentPlaces = function(req, res) {
 
   // res.render('recent', data);
 };
+
+exports.viewPlace = function(req, res) {
+  var placeName = req.params.name;
+  var placesArray = places.placesInfo;
+
+  var obj;
+  for (var i = 0; i < placesArray.length; i++) {
+    obj = placesArray[i];
+    if (obj['name'] == placeName) {
+        break;
+    }
+  }
+
+  if (i == placesArray.length) {
+  	obj = null;
+  }
+
+  res.json(obj);
+};

@@ -2,17 +2,17 @@
 	"pageName": "Bookmarks",
 	"bookmarks": [
 		{
-			"name": "Geisel Library",
+			"name": "Geisel Library, Gilman Drive, La Jolla, CA, United States",
 			"date": "2-5-2015",
 			"id": "1"		
 		},
 		{
-			"name": "Computer Science Labs",
+			"name": "Computer Science and Engineering Building, La Jolla, CA, United States",
 			"date": "2-1-2015",
 			"id": "2"		
 		},
 		{
-			"name": "Price Center",
+			"name": "Price Center Theater, La Jolla, San Diego, CA, United States",
 			"date": "1-29-2015",
 			"id": "3"		
 		}

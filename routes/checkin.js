@@ -2,26 +2,31 @@ var config = require('../config.js'), //config file contains all tokens and othe
     db = require('orchestrate')(config.db); //config.db holds Orchestrate token
 
 exports.view = function(req, res) {
-  res.render('checkin', {
-    pageName: 'Check-ins',
-  	"nearby": [
-  		{
-  			"name": "Geisel Library"
-  		},
-  		{
-  			"name": "Biomedical Library"
-  		}, 
-  		{
-  			"name": "Computer Science Basement"
-  		}, 
-  		{
-  			"name": "Richard Atkinson Hall"
-  		}, 
-  		{
-  			"name": "Applied Physics and Mathematics Building"
-  		}
-  	]
-  });
+   db.list('places')
+      .then(function (result) {
+          // console.log("result: "+result);
+          // console.log("result.results: "+result['results']);
+          var items = result.body.results;
+          var names = [];
+          for (var i = 0; i < items.length; i++) {
+            names[i] = items[i].value.name;
+          }
+          // console.log("items: " + items);
+          // console.log("sending names back: " + names); 
+          var objArray = [];
+          for (var j = 0; j < names.length; j++) {
+            var obj = {"name": names[j]};
+            objArray[j] = obj;
+          }
+          res.render('checkin', {
+            pageName: 'Check In',
+            "nearby": objArray
+          });      
+      })
+      .fail(function (err) {
+         console.log(err);
+         res.send(500);
+      });
 };
 
 exports.checkin = function(req, res) {
