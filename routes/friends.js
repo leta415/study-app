@@ -41,6 +41,33 @@ exports.search = function(req, res){
 
 exports.deleteFriend = function(req,res){
 	console.log("deleting");
+	var id = req.params.id;
+	console.log("deleting id " + id);
+	var friends = [];
+	var newfriends = [];
+
+	db.get('friends', req.user.username)
+	.then(function(result){
+		friends = result.body.friends;
+		for(var i in friends){
+			if(id != friends[i].id){
+				newfriends.push(friends[i]);
+			}
+		}
+		var json = "{\"friends\": " + JSON.stringify(newfriends) + "}";  
+		var jsonObj = JSON.parse(json);
+		db.put('friends', req.user.username ,jsonObj)
+		.then(function(result){
+			console.log("deleted friend " + id);
+			res.redirect('/friends');
+		})
+		.fail(function(err){
+			console.log(err);
+		})
+	})
+	.fail(function(err){
+		console.log(err);
+	})
 };
 
 exports.add = function(req,res){

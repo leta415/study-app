@@ -22,10 +22,18 @@ $('a.btnDelete').on('click', function (e) {
     $('#my1Modal').data('id', id).modal('show');
 });
 
-$('#btnDelteYes').click(function () {
+$('#btnDelteYes').click(function (e) {
+    e.preventDefault();
 	console.log("yes clicked");
     var id = $('#my1Modal').data('id');
-    $('[data-id=' + id + ']').remove();
+    //$('[data-id=' + id + ']').remove();
+    var url ='/delete/'+ id;
+
+    function refresh(json){
+        location.reload(true);
+    }
+    $.get(url, refresh);
+
     $('#my1Modal').modal('hide');
 });
 
@@ -53,9 +61,10 @@ $('#search').click(function (e){
             $('#myModal').modal('toggle');
             //get the user details and add it to friends db
             var url = '/user/' +displayName + '/' + friendUsername;
-            $.get(url, function() {
-                    console.log("finished");
-                });
+            function refresh(json){
+                location.reload(true);
+            }
+            $.get(url, refresh);
         });
     }
 
@@ -63,18 +72,3 @@ $('#search').click(function (e){
 
 });
 
-/*$('#search').click(function () {
-	console.log("search clicked");
-	var usrn = $('username').val();
-	if(usrn = "test"){
-		var html = "<p style=\"text-align:left\">Name: Tester Username: test <a href=\"#\" class=\"btnAdd btn\">Add</a></p>";
-		$('.friendsName').html(html);
-
-		$('a.btnAdd').click(function(){
-			console.log("add clicked");
-			var row = $("<tr class=\"btnDelete\" data-id=\"5\"><td><h5>Tester<br/><small></small></h5></td><td><h5>test</h5></td><td><h5><br/><small></small></h5></td><td><h5></h5></td><td><a href=\"#\" class=\"btnDelete btn\" data-target=\"#my1Modal\">Delete</a></td></tr>");
-			row.appendTo($('#friendsTable'));
-			$('#myModal').modal('toggle');
-		});
-	}
-});*/
