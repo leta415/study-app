@@ -1,7 +1,7 @@
 var config = require('../config.js'), //config file contains all tokens and other private info
     db = require('orchestrate')(config.db); //config.db holds Orchestrate token
 
-var data = require('../public/json/defaultPlaces.json');
+var data; //= require('../public/json/defaultPlaces.json');
 
 exports.viewMap = function(req, res) {
    res.render('map', data);

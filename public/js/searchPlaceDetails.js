@@ -1,4 +1,16 @@
-var lastSearched;
+var lastSearched; //Last place that was searched for by user
+var placeNames;
+var placeObj;
+
+$(document).ready(function() {
+    $.get('/getAllPlaceNames', getAllPlaceNamesCallback);
+});
+
+// Get array of place names
+function getAllPlaceNamesCallback(result) {
+   placeNames = result.slice(0);
+   initializeSearchPlaces();
+}
 
 function initializeSearchPlaces() {
 
@@ -26,19 +38,15 @@ function initializeSearchPlaces() {
         };
     };
      
-    // Places for testing purposes
-    var places = ["Geisel Library", "Computer Science Labs", "Price Center", "Applied Physics and Mathematics Building", "Biomedical Library"];
-
-
     $('#search-place-details-input').typeahead({
         hint: true,
         highlight: true,
         minLength: 1
     },
     {
-        name: 'places',
+        name: 'placeNames',
         displayKey: 'value',
-        source: substringMatcher(places),
+        source: substringMatcher(placeNames)
         // updater: function(item) {
         //     console.log(item["value"]);
         //     return item;
@@ -75,40 +83,31 @@ function initializeSearchPlaces() {
 
         console.log("datum.value: " + datum.value); //datum value is place name
 
-        var index = 0;
-        if (datum.value == "Geisel Library") index = 0;
-        else if (datum.value == "Computer Science Labs") index = 1;
-        else if (datum.value == "Price Center") index = 2;
-        else if (datum.value == "Applied Physics and Mathematics Building") index = 3;
-        else index = 4;
-
-        $.getJSON('/json/placesInfo.json', function(json) {
-            console.log(json);
-            console.log("json name: " + json.placesInfo[index].name);
-            var nameQuery = encodeURIComponent(json.placesInfo[index].name.trim()) + "%20La Jolla,%20CA";
-            var url = "https://www.google.com/maps/embed/v1/place?q=" + nameQuery + "&key=AIzaSyDQRjMnj-tHPC2FnAE8xhQ-HyoiUHeYQdQ";
-            console.log("Request for: " + url);
-            $("#place-details-map-iframe").attr("src", url);
-            $("#place-details-name").html(json.placesInfo[index].name);
-            $("#hours-times-m").html(json.placesInfo[index].hoursM);
-            $("#hours-times-t").html(json.placesInfo[index].hoursT);
-            $("#hours-times-w").html(json.placesInfo[index].hoursW);
-            $("#hours-times-th").html(json.placesInfo[index].hoursTh);
-            $("#hours-times-f").html(json.placesInfo[index].hoursF);
-            $("#hours-times-s").html(json.placesInfo[index].hoursS);
-            $("#hours-times-su").html(json.placesInfo[index].hoursSu);
-            $("#amenity-val-wifi").html(json.placesInfo[index].wifi);
-            $("#amenity-val-outlets").html(json.placesInfo[index].outlets);
-            $("#amenity-val-coffee").html(json.placesInfo[index].coffee);
-            $("#amenity-val-food").html(json.placesInfo[index].food);
-            $("#place-details").css("display", "initial");
-        });
+        // Find place info by name
+        var getPlaceUrl = '/findPlaceByName/' + datum.value;
+        $.get(getPlaceUrl, findPlace);
     }
 
-    $("#search-place-details-input").focus();
-
+   $("#search-place-details-input").focus();
 }
 
-$(document).ready(function() {
-    initializeSearchPlaces();
-})
+// Find place by name
+function findPlace(result) {
+   placeObj = result;
+   var nameQuery = encodeURIComponent(placeObj.name.trim());
+   var url = "https://www.google.com/maps/embed/v1/place?q=" + nameQuery + "&key=AIzaSyDQRjMnj-tHPC2FnAE8xhQ-HyoiUHeYQdQ";
+   $("#place-details-map-iframe").attr("src", url);
+   $("#place-details-name").html(placeObj.name);
+   $("#hours-times-m").html(placeObj.hoursM);
+   $("#hours-times-t").html(placeObj.hoursT);
+   $("#hours-times-w").html(placeObj.hoursW);
+   $("#hours-times-th").html(placeObj.hoursTh);
+   $("#hours-times-f").html(placeObj.hoursF);
+   $("#hours-times-s").html(placeObj.hoursS);
+   $("#hours-times-su").html(placeObj.hoursSu);
+   $("#amenity-val-wifi").html(placeObj.wifi);
+   $("#amenity-val-outlets").html(placeObj.outlets);
+   $("#amenity-val-coffee").html(placeObj.coffee);
+   $("#amenity-val-food").html(placeObj.food);
+   $("#place-details").css("display", "initial");
+}

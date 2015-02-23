@@ -110,7 +110,7 @@ function ensureAuthenticated(req, res, next) {
 app.get('/', ensureAuthenticated, index.view);
 app.get('/map', map.viewMap);
 app.get('/friends', ensureAuthenticated, friend.displayFriends);
-app.get('/placeDetails', ensureAuthenticated, placeDetails.viewGroups);
+app.get('/placeDetails', placeDetails.viewGroups);
 app.get('/recent', ensureAuthenticated, recent.recentPlaces);
 app.get('/checkin', ensureAuthenticated, checkin.view);
 app.get('/bookmarks', ensureAuthenticated, bookmarks.list);
@@ -217,6 +217,8 @@ app.post('/addFriend', ensureAuthenticated, friend.add);
 app.get('/user/:name/:id', ensureAuthenticated, friend.add);
 app.get('/delete', ensureAuthenticated, friend.deleteFriend);
 app.get('/displayNearby', map.displayNearbyResults);
+app.get('/getAllPlaceNames', placeDetails.getAllPlaceNames);
+app.get('/findPlaceByName/:name', placeDetails.findPlaceByName);
 
 //============END PASSPORT=================
 
