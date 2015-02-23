@@ -218,6 +218,7 @@ app.get('/delete/:id', ensureAuthenticated, friend.deleteFriend);
 app.get('/displayNearby', map.displayNearbyResults);
 app.get('/getAllPlaceNames', placeDetails.getAllPlaceNames);
 app.get('/findPlaceByName/:name', placeDetails.findPlaceByName);
+app.get('/bookmark/:id', ensureAuthenticated, recent.bookmark);
 
 //============END PASSPORT=================
 

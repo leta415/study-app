@@ -26,7 +26,6 @@ $('#btnDelteYes').click(function (e) {
     e.preventDefault();
 	console.log("yes clicked");
     var id = $('#my1Modal').data('id');
-    //$('[data-id=' + id + ']').remove();
     var url ='/delete/'+ id;
 
     function refresh(json){

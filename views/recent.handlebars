@@ -59,6 +59,44 @@
 </div>
 <!-- End of modal -->
 
+<!--modal for adding bookmarks -->
+<div id="bookmarkModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+          <h3 class="modal-title" id="myModalLabel">Bookmark</h3>
+      </div>
+      <div class="modal-body">
+          <p> Are you sure you want to bookmark this location?</p>
+      </div>
+      <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" data-dismiss="modal" class="btn btn-primary" id="btnAdd">Confirm</button>
+      </div>
+    </div>
+  </div>
+</div> 
+<!-- End of modal -->
+
+<!--modal for warning already existed bookmark -->
+<div id="bookmarkExisted" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+          <h3 class="modal-title" id="myModalLabel">Oops</h3>
+      </div>
+      <div class="modal-body">
+          <p> You have already added this bookmark!</p>
+      </div>
+      <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div> 
+<!-- End of modal -->
 
 {{#if locations}}
 <table class="table">
@@ -66,13 +104,15 @@
           <tr>
             <th><h4>Location</h4></th>
             <th><h4>Last Check-In</h4></th>
+            <th data-sortable="false"></th>
           </tr>
         </thead>
         <tbody>
           {{#each locations}}
-          <tr>
+          <tr class="btnMark" data-id="{{location}}">
             <td><strong><a class="placeName" href="#" data-toggle='modal' data-target="#place-detail-overlay">{{location}}</a></strong></td>
             <td>{{currentTime}}</td>
+            <td><a href="#" class="btnMark btn" data-target="#bookmarkModal">Bookmark</a></td>
           </tr>
           {{/each}}
         </tbody>

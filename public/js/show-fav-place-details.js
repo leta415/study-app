@@ -31,3 +31,26 @@ function showPlaceDetails(result) {
 $(".placeName").on('hidden', function() {
     $("#place-detail-overlay").modal('show');
 });
+
+//adding bookmarks
+$('a.btnMark').on('click', function (e) {
+    console.log("bookmark clicked");
+    e.preventDefault();
+    var id = $(this).closest('tr').data('id');
+    $('#bookmarkModal').data('id', id).modal('show');
+});
+
+$('#btnAdd').click(function (e) {
+    e.preventDefault();
+    console.log("confirm clicked");
+    var id = $('#bookmarkModal').data('id');
+    var url ='/bookmark/'+ id;
+
+    function refresh(json){
+        var id = json['name'];
+        $('#bookmarkExisted').data('id', id).modal('show');
+    }
+    $.get(url, refresh);
+
+    $('#bookmarkModal').modal('hide');
+});
