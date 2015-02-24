@@ -251,3 +251,9 @@ td > h5 > small {
     font-style: italic;
     color: red;
 }
+
+.anchor, .anchor:hover {
+	text-decoration: none;
+	color: #337ab7;
+	font-weight: bold;
+}

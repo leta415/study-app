@@ -4,10 +4,62 @@
 		<div class="panel-heading">Account Settings</div>
 		  <!-- List group -->
 		  <ul class="list-group">
-		    <li class="list-group-item"><strong>Username:</strong> </li>
-		    <li class="list-group-item"><strong>Display name:</strong> </li>
-		    <li class="list-group-item"><strong>Email:</strong></li>
+		    <li class="list-group-item"><strong>Username:</strong> {{username}} 
+		    </li>
+		    <li class="list-group-item"><strong>Display name:</strong> {{displayName}}
+		    	<a href="#displayName" style="float: right;">Change</a>
+		    </li>
+		    <li class="list-group-item"><strong>Email:</strong> {{email}}
+		    	<a href="#email" style="float: right;">Change</a>
+		    </li>
+		    <li class="list-group-item"><strong>Password:</strong> *******
+		    	<a href="#password" style="float: right;">Change</a>
+		    </li>
 		  </ul>
 		</div>
 
+		<hr />
+		<!-- Begin form for changing display name -->
+		<a name="displayName" class="anchor">
+			Change your display name
+		</a><br /><br />
+		<form>
+			<div class="form-group">
+			<label>New display name</label>
+			<input type="displayName" class="form-control" name="displayName" placeholder="Enter new display name" required>
+			</div>
+
+			<button type="submit" class="btn btn-default">Change</button>
+		</form>
+
+		<hr />
+
+		<!-- Begin form for changing email -->
+		<a name="email" class="anchor">
+			Change your e-mail address
+		</a><br /><br />
+		<form>
+			<div class="form-group">
+			<label>New e-mail address</label>
+			<input type="email" class="form-control" placeholder="Enter new e-mail" required>
+			</div>
+
+			<button type="submit" class="btn btn-default">Change</button>
+		</form>
+
+		<hr />
+
+		<!-- Begin form for changing password -->
+		<a name="password" class="anchor">
+			Change your password
+		</a><br /><br />
+		<form>
+			<div class="form-group">
+			<label>New password</label>
+			<input type="password" class="form-control" placeholder="Enter new password" required>
+			</div>
+
+			<button type="submit" class="btn btn-default">Change</button>
+		</form>
+		<br /><br />
 </div>
