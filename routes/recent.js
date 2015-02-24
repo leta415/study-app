@@ -46,65 +46,65 @@ exports.viewPlace = function(req, res) {
 exports.bookmark = function(req, res) {
 	var name = req.params.id;
 	console.log("adding " + name);
-	//this query is not working properly for search
-	var query = 'key=' + req.user.username + ' - name=\"' + name + "\"";
-	console.log(query); 
-	//check if user bookmarked the place already
-	db.search('bookmark', query)
-	.then(function(result){
-		console.log(result.body);
-		//if not, add bookmark
-		if(result.body.count == 0){
-			// create Date object for current location
-		    var d = new Date();
-		    
-		    // convert to msec
-		    // add local time zone offset 
-		    // get UTC time in msec
-		    utc = d.getTime() + (d.getTimezoneOffset() * 60000);
 
-		    var offset = -8;
-		    
-		    // create new Date object for different city
-		    // using supplied offset
-		    nd = new Date(utc + (3600000*offset));
-		    nd = nd.toLocaleString();
+	db.get('bookmarks', req.user.username)
+	.then(function(result) {
+		temp = {};
 
-		    //random generated id for bookmark
-			var id = Math.floor((Math.random() * 100) + 1);
+		bookmarks = result.body.bookmarks;
 
-			var bookmarks = [];
-			var temp = {};
+		var bookmarkExists = 0;
+		// Iterate through bookmarks and check to see if we 
+		// need to put the bookmark in again
+		for (var i = 0; i < bookmarks.length; i++) {
+			if (name == bookmarks[i].name) {
+				// bookmark already exists
+				bookmarkExists = 1;
+			}
+		}
 
-			db.get('bookmarks', req.user.username)
+		console.log("bookmarkExists: " + bookmarkExists);
+		if (!bookmarkExists) {
+			console.log("I'm in here");
+			temp["name"] = name;
+
+			bookmarks.push(temp);
+			var json = "{\"bookmarks\": " + JSON.stringify(bookmarks) + "}";  
+			console.log(json);
+			var jsonObj = JSON.parse(json);
+
+			db.put('bookmarks', req.user.username, jsonObj)
 			.then(function(result){
-				bookmarks = result.body.bookmarks;
-				temp["name"] = name;
-				temp["date"] = nd;
-				temp["id"] = id;
-				bookmarks.push(temp);
-				var json = "{\"bookmarks\": " + JSON.stringify(bookmarks) + "}";  
-				console.log(json);
-				var jsonObj = JSON.parse(json);
-
-				db.put('bookmarks', req.user.username, jsonObj)
-				.then(function(result){
-					console.log("added bookmark" + name);
-				})
-				.fail(function(err){
-					console.log(err);
-				})
+				console.log("added bookmark" + name);
 			})
 			.fail(function(err){
+				console.log("problem putting bookmark in");
 				console.log(err);
-			})	
-		}else{
-			console.log("bookmark already existed");
-			var returnjson = "{\"name\": \"" +name + "\"}";
-			res.json( returnjson);
+			})
+		} else {
+			console.log("bookmark already exists!");
 		}
+
 	})
 	.fail(function(err){
 		console.log(err);
-	})
+		console.log("user doesn't have bookmarks yet");
+
+		bookmarks = [];
+		temp = {};
+		temp["name"] = name;
+		bookmarks.push(temp);
+		var json = "{\"bookmarks\": " + JSON.stringify(bookmarks) + "}";  
+		console.log(json);
+		var jsonObj = JSON.parse(json);
+
+		db.put('bookmarks', req.user.username, jsonObj)
+		.then(function(result){
+			console.log("added bookmark" + name + "#2");
+		})
+		.fail(function(err){
+			console.log("problem putting bookmark in for the first time");
+			console.log(err);
+		})
+	})	
 };
