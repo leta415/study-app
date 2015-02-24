@@ -28,7 +28,7 @@ exports.search = function(req, res){
 	console.log("searching!");
 	var username = req.params.id;
 	console.log("query = username:" + username);
-	db.search('users', 'username:' +username)
+	db.search('local-users', 'username:' +username)
 	.then(function(result){
 		//get json array
 		console.log(result.body.results[0].value);

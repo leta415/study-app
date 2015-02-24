@@ -46,6 +46,7 @@ exports.viewPlace = function(req, res) {
 exports.bookmark = function(req, res) {
 	var name = req.params.id;
 	console.log("adding " + name);
+	//this query is not working properly for search
 	var query = 'key=' + req.user.username + ' - name=\"' + name + "\"";
 	console.log(query); 
 	//check if user bookmarked the place already
