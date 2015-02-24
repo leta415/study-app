@@ -113,7 +113,7 @@ app.get('/placeDetails', placeDetails.viewGroups);
 app.get('/recent', ensureAuthenticated, recent.recentPlaces);
 app.get('/recent/:name', recent.viewPlace);
 app.get('/checkin', ensureAuthenticated, checkin.view);
-app.get('/bookmarks', ensureAuthenticated, bookmarks.list);
+app.get('/bookmarks', ensureAuthenticated, bookmarks.displayPlace);
 app.get('/bookmarks/:name', ensureAuthenticated, bookmarks.viewPlace);
 app.get('/settings', ensureAuthenticated, settings.list);
 
@@ -219,6 +219,7 @@ app.get('/displayNearby', map.displayNearbyResults);
 app.get('/getAllPlaceNames', placeDetails.getAllPlaceNames);
 app.get('/findPlaceByName/:name', placeDetails.findPlaceByName);
 app.get('/bookmark/:id', ensureAuthenticated, recent.bookmark);
+app.get('/deleteBookmark/:id', ensureAuthenticated, bookmarks.deleteBookmark );
 
 //============END PASSPORT=================
 
