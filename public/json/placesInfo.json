@@ -3,8 +3,10 @@
     "placesInfo": [
         {
             "name"    : "Geisel Library, Gilman Drive, La Jolla, CA, United States", 
-            "lat"     : 32.88120,
-            "long"    : -117.23750,
+            "location": {
+                "latitude" : 32.88120,
+                "longitude": -117.23750
+            },
             "hoursM"  : "7:30 am - 12:00 am",
             "hoursT"  : "7:30 am - 12:00 am",
             "hoursW"  : "7:30 am - 12:00 am",
@@ -19,8 +21,10 @@
         },
         {
             "name"    : "Computer Science and Engineering Building, La Jolla, CA, United States",
-            "lat"     : 32.88180,
-            "long"    : -117.23352,            
+            "location": {
+                "latitude" : 32.88180,
+                "longitude": -117.23352
+            },           
             "hoursM"  : "7:00am - 10:00pm",
             "hoursT"  : "7:00am - 10:00pm",
             "hoursW"  : "7:00am - 10:00pm",
@@ -34,9 +38,11 @@
             "coffee"  : "no"
         },
         {
-            "name"    : "Price Center Theater, La Jolla, San Diego, CA, United States",
-            "lat"     : 32.880147,
-            "long"    : -117.237161, 
+            "name"    : "Price Center Theater, San Diego, CA, United States",
+            "location": {
+                "latitude" : 32.880147,
+                "longitude": -117.237161
+            },  
             "hoursM"  : "12:00am - 11:59pm",
             "hoursT"  : "12:00am - 11:59pm",
             "hoursW"  : "12:00am - 11:59pm",
@@ -51,8 +57,10 @@
         },
         {
             "name"    : "Applied Physics and Mathematics Building, San Diego, CA, United States",
-            "lat"     : 32.879245,
-            "long"    : -117.241041, 
+            "location": {
+                "latitude" : 32.879245,
+                "longitude": -117.241041
+            },  
             "hoursM"  : "12:00am - 11:59pm",
             "hoursT"  : "12:00am - 11:59pm",
             "hoursW"  : "12:00am - 11:59pm",
@@ -67,15 +75,17 @@
         },
         {
             "name"    : "Biomedical Library, La Jolla, CA, United States",
-            "lat"     : 32.875464,
-            "long"    : -117.236864, 
-            "hoursM"  : "8:00 am - 12:00 am",
-            "hoursT"  : "8:00 am - 12:00 am",
-            "hoursW"  : "8:00 am - 12:00 am",
-            "hoursTh" : "8:00 am - 12:00 am",
-            "hoursF"  : "8:00 am - 6:00 pm",
-            "hoursS"  : "10:00 am - 6:00 pm",
-            "hoursSu" : "12:00 pm - 12:00 am",
+            "location": {
+                "latitude" : 32.875464,
+                "longitude": -117.236864
+            }, 
+            "hoursM"  : "8:00am - 12:00am",
+            "hoursT"  : "8:00am - 12:00am",
+            "hoursW"  : "8:00am - 12:00am",
+            "hoursTh" : "8:00am - 12:00am",
+            "hoursF"  : "8:00am - 6:00pm",
+            "hoursS"  : "10:00am - 6:00pm",
+            "hoursSu" : "12:00pm - 12:00am",
             "wifi"    : "yes",
             "outlets" : "yes",
             "food"    : "no",
@@ -83,15 +93,17 @@
         },
         {
             "name"    : "Tapioca Express, Gilman Drive, La Jolla, CA",
-            "lat"     : 32.880626,
-            "long"    : -117.236027,
-            "hoursM"  : "9:30 am - 12:00 am",
-            "hoursT"  : "9:30 am - 12:00 am",
-            "hoursW"  : "9:30 am - 12:00 am",
-            "hoursTh" : "9:30 am - 12:00 am",
-            "hoursF"  : "9:30 am - 6:00 pm",
-            "hoursS"  : "11:30 am - 12:00 am",
-            "hoursSu" : "11:30 am - 12:00 am",
+            "location": {
+                "latitude" : 32.880626,
+                "longitude": -117.236027
+            }, 
+            "hoursM"  : "9:30am - 12:00am",
+            "hoursT"  : "9:30am - 12:00am",
+            "hoursW"  : "9:30am - 12:00am",
+            "hoursTh" : "9:30am - 12:00am",
+            "hoursF"  : "9:30am - 6:00pm",
+            "hoursS"  : "11:30am - 12:00am",
+            "hoursSu" : "11:30am - 12:00am",
             "wifi"    : "yes",
             "outlets" : "no",
             "food"    : "yes",
