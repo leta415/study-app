@@ -10,8 +10,13 @@
       {{#each nearby}}
     	<div class="radio">
     	  <label>
-    	    <input type="radio" name="location" id="optionRadio" value="{{name}}">
+          {{#if @first}}
+    	    <input type="radio" name="location" id="optionRadio" value="{{name}}" checked />
     	    {{name}}
+          {{else}}
+          <input type="radio" name="location" id="optionRadio" value="{{name}}">
+          {{name}}
+          {{/if}}
     	  </label>
     	</div>
     	{{/each}}
