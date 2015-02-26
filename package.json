@@ -30,6 +30,7 @@
     "passport-google": "^0.3.0",
     "passport-local": "^1.0.0",
     "passport-twitter": "^1.0.2",
+    "connect-flash": "*",
     "q": "^1.0.1"
   },
   "engines": {

@@ -5,7 +5,7 @@ var bcrypt = require('bcryptjs'),
 
 //used in local-signup strategy
 exports.localReg = function (req, username, password) {
-console.log("hi");
+console.log("I'm in localReg");
   var deferred = Q.defer();
   var hash = bcrypt.hashSync(password, 8);
   var user = {

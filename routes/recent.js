@@ -83,8 +83,10 @@ exports.bookmark = function(req, res) {
 			})
 		} else {
 			console.log("bookmark already exists!");
+			
 		}
 
+		res.redirect("/");
 	})
 	.fail(function(err){
 		console.log(err);

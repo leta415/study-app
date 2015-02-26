@@ -13,7 +13,8 @@ var express = require('express'),
     LocalStrategy = require('passport-local'),
     TwitterStrategy = require('passport-twitter'),
     GoogleStrategy = require('passport-google'),
-    FacebookStrategy = require('passport-facebook');
+    FacebookStrategy = require('passport-facebook')
+    flash = require('connect-flash');
     
 var http = require('http');
 var path = require('path');
@@ -58,6 +59,7 @@ app.use(express.bodyParser());
 app.use(express.session({secret: 'anything'}));
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(flash());
 
 /* This is so that the user session persists across the templates, and that
  * req.user is implicitly defined in all the routes. 
@@ -176,7 +178,7 @@ app.get('/login', function(req, res){
 });
 
 app.get('/signup', function(req, res){
-  res.render('signup', {layout: 'index'});
+  res.render('signup', {layout: 'index', message: req.flash('error')});
 });
 
 
@@ -186,6 +188,7 @@ app.post('/local-reg', passport.authenticate('local-signup', {
   successRedirect: '/',
   // failureRedirect: '/signup'
   failureRedirect: '/signup',
+  failureFlash: 'Please choose another username. User already exists!',
   })
 );
 
@@ -194,7 +197,7 @@ app.post('/local-reg', passport.authenticate('local-signup', {
 app.post('/login', passport.authenticate('local-signin', { 
   successRedirect: '/',
   // failureRedirect: '/login'
-    failureRedirect: '/login',
+    failureRedirect: '/login/failure',
   })
 );
 
