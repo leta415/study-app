@@ -131,7 +131,9 @@ function initializeNearbyPlaces() {
     startLocMarker.setPosition(place.geometry.location);
     startLocMarker.setVisible(true);
 
-    $.get("/displayNearby", showNearbyOnMap);
+    console.log("lat: " + place.geometry.location.lat() + "   lng: " + place.geometry.location.lng());
+    var getNearbyUrl = "/displayNearby/" + place.geometry.location.lat() + "/" + place.geometry.location.lng(); 
+    $.get(getNearbyUrl, showNearbyOnMap);
   }
   // End of autocompleteCallback function
 
@@ -153,17 +155,17 @@ function initializeNearbyPlaces() {
           "var url = 'https://www.google.com/maps/embed/v1/place?q=' + nameQuery + '&key=AIzaSyDQRjMnj-tHPC2FnAE8xhQ-HyoiUHeYQdQ';" +
           "$('#place-details-map-iframe-overlay').attr('src', url);" +
           "$('#place-details-name-overlay').html('" + obj.name + "');" +
-          "$('#hours-times-m-overlay').html('" + obj.hoursM + "');" +
-          "$('#hours-times-t-overlay').html('" + obj.hoursT + "');" +
-          "$('#hours-times-w-overlay').html('" + obj.hoursW + "');" +
-          "$('#hours-times-th-overlay').html('" + obj.hoursTh + "');" +
-          "$('#hours-times-f-overlay').html('" + obj.hoursF + "');" +
-          "$('#hours-times-s-overlay').html('" + obj.hoursS + "');" +
-          "$('#hours-times-su-overlay').html('" + obj.hoursSu + "');" +
-          "$('#amenity-val-wifi-overlay').html('" + obj.wifi + "');" +
-          "$('#amenity-val-outlets-overlay').html('" + obj.outlets + "');" +
-          "$('#amenity-val-coffee-overlay').html('" + obj.coffee + "');" +
-          "$('#amenity-val-food-overlay').html('" + obj.food + "');" +
+          "$('#hours-times-m-overlay').html('" + obj.hours.M + "');" +
+          "$('#hours-times-t-overlay').html('" + obj.hours.T + "');" +
+          "$('#hours-times-w-overlay').html('" + obj.hours.W + "');" +
+          "$('#hours-times-th-overlay').html('" + obj.hours.Th + "');" +
+          "$('#hours-times-f-overlay').html('" + obj.hours.F + "');" +
+          "$('#hours-times-s-overlay').html('" + obj.hours.S + "');" +
+          "$('#hours-times-su-overlay').html('" + obj.hours.Su + "');" +
+          "$('#amenity-val-wifi-overlay').html('" + obj.amenities.wifi + "');" +
+          "$('#amenity-val-outlets-overlay').html('" + obj.amenities.outlets + "');" +
+          "$('#amenity-val-coffee-overlay').html('" + obj.amenities.coffee + "');" +
+          "$('#amenity-val-food-overlay').html('" + obj.amenities.food + "');" +
           "$('#place-details-overlay').css('display', 'initial');";
 
       var newMarker = new google.maps.Marker({
