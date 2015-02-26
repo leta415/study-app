@@ -119,12 +119,10 @@ app.get('/settings', ensureAuthenticated, settings.list);
 
 //===============PASSPORT=================
 passport.serializeUser(function(user, done) {
-  console.log("serializing " + user.username);
   done(null, user);
 });
 
 passport.deserializeUser(function(obj, done) {
-  console.log("deserializing " + obj);
   done(null, obj);
 });
 
@@ -220,6 +218,9 @@ app.get('/getAllPlaceNames', placeDetails.getAllPlaceNames);
 app.get('/findPlaceByName/:name', placeDetails.findPlaceByName);
 app.get('/bookmark/:id', ensureAuthenticated, recent.bookmark);
 app.get('/deleteBookmark/:id', ensureAuthenticated, bookmarks.deleteBookmark );
+
+// Allows user to change their settings
+app.post('/settings/changeName', ensureAuthenticated, settings.change);
 
 //============END PASSPORT=================
 
