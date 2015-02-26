@@ -51,7 +51,7 @@ exports.deleteBookmark = function(req,res){
   .then(function(result){
     bookmarks = result.body.bookmarks;
     for(var i in bookmarks){
-      if(id != bookmarks[i].id){
+      if(id != bookmarks[i].name){
         newBookmarks.push(bookmarks[i]);
       }
     }
