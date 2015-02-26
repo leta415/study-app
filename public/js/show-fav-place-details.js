@@ -37,6 +37,7 @@ $('a.btnMark').on('click', function (e) {
     console.log("bookmark clicked");
     e.preventDefault();
     var id = $(this).closest('tr').data('id');
+    $('#location').html(id);
     $('#bookmarkModal').data('id', id).modal('show');
 });
 
