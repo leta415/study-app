@@ -55,6 +55,7 @@ console.log("there");
   db.get('local-users', username)
   .then(function (result){
     console.log("FOUND USER");
+    console.log("password is: " + password);
     var hash = result.body.password;
     console.log(hash);
     console.log(bcrypt.compareSync(password, hash));
