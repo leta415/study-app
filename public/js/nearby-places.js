@@ -167,7 +167,7 @@ function initializeNearbyPlaces() {
           "$('#place-details-overlay').css('display', 'initial');";
 
       var newMarker = new google.maps.Marker({
-        position: {lat: obj.lat, lng: obj.long},
+        position: {lat: obj.location.latitude, lng: obj.location.longitude},
         map: map,
         clickable: true,
         html: "<a href='#' onclick=\"" + jsStr + "\" data-toggle='modal' data-target='#place-detail-overlay' id='place" + index + "'><strong>" + obj.name +"</strong></a>"      
