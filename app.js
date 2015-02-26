@@ -216,7 +216,7 @@ app.get('/search/:id', ensureAuthenticated, friend.search);
 app.post('/addFriend', ensureAuthenticated, friend.add);
 app.get('/user/:name/:id', ensureAuthenticated, friend.add);
 app.get('/delete/:id', ensureAuthenticated, friend.deleteFriend);
-app.get('/displayNearby', map.displayNearbyResults);
+app.get('/displayNearby/:lat/:lng', map.displayNearbyResults);
 app.get('/getAllPlaceNames', placeDetails.getAllPlaceNames);
 app.get('/findPlaceByName/:name', placeDetails.findPlaceByName);
 app.get('/bookmark/:id', ensureAuthenticated, recent.bookmark);

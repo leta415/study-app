@@ -2,112 +2,280 @@
     "pageName": "Place Details",
     "placesInfo": [
         {
+            "_id"     : 0,
             "name"    : "Geisel Library, Gilman Drive, La Jolla, CA, United States", 
             "location": {
                 "latitude" : 32.88120,
                 "longitude": -117.23750
             },
-            "hoursM"  : "7:30 am - 12:00 am",
-            "hoursT"  : "7:30 am - 12:00 am",
-            "hoursW"  : "7:30 am - 12:00 am",
-            "hoursTh" : "7:30 am - 12:00 am",
-            "hoursF"  : "7:30 am - 6:00 pm",
-            "hoursS"  : "10:00 am - 6:00 pm",
-            "hoursSu" : "10:00 am - 12:00 am",
-            "wifi"    : "yes",
-            "outlets" : "yes",
-            "food"    : "no",
-            "coffee"  : "no"
+            "hours"   : {
+                "M"  : "7:30 am - 12:00 am",
+                "T"  : "7:30 am - 12:00 am",
+                "W"  : "7:30 am - 12:00 am",
+                "Th" : "7:30 am - 12:00 am",
+                "F"  : "7:30 am - 6:00 pm",
+                "S"  : "10:00 am - 6:00 pm",
+                "Su" : "10:00 am - 12:00 am"
+            },
+            "amenities" : {
+                "wifi"    : "yes",
+                "outlets" : "yes",
+                "food"    : "no",
+                "coffee"  : "no"
+            }
         },
         {
+            "_id"     : 1,
             "name"    : "Computer Science and Engineering Building, La Jolla, CA, United States",
             "location": {
                 "latitude" : 32.88180,
                 "longitude": -117.23352
-            },           
-            "hoursM"  : "7:00am - 10:00pm",
-            "hoursT"  : "7:00am - 10:00pm",
-            "hoursW"  : "7:00am - 10:00pm",
-            "hoursTh" : "7:00am - 10:00pm",
-            "hoursF"  : "7:00am - 6:00pm",
-            "hoursS"  : "Closed",
-            "hoursSu" : "Closed",
-            "wifi"    : "yes",
-            "outlets" : "yes",
-            "food"    : "no",
-            "coffee"  : "no"
+            },    
+            "hours" : {       
+                "M"  : "7:00am - 10:00pm",
+                "T"  : "7:00am - 10:00pm",
+                "W"  : "7:00am - 10:00pm",
+                "Th" : "7:00am - 10:00pm",
+                "F"  : "7:00am - 6:00pm",
+                "S"  : "Closed",
+                "Su" : "Closed"
+            },
+            "amenities" : {
+                "wifi"    : "yes",
+                "outlets" : "yes",
+                "food"    : "no",
+                "coffee"  : "no"
+            }
         },
         {
-            "name"    : "Price Center Theater, San Diego, CA, United States",
+            "_id"     : 2,
+            "name"    : "Sun God Lounge, San Diego, CA",
             "location": {
-                "latitude" : 32.880147,
-                "longitude": -117.237161
+                "latitude" : 32.879908,
+                "longitude": -117.23715
             },  
-            "hoursM"  : "12:00am - 11:59pm",
-            "hoursT"  : "12:00am - 11:59pm",
-            "hoursW"  : "12:00am - 11:59pm",
-            "hoursTh" : "12:00am - 11:59pm",
-            "hoursF"  : "12:00am - 11:59pm",
-            "hoursS"  : "12:00am - 11:59pm",
-            "hoursSu" : "12:00am - 11:59pm",
-            "wifi"    : "yes",
-            "outlets" : "no",
-            "food"    : "no",
-            "coffee"  : "no"
+            "hours" : {
+                "M"  : "12:00am - 11:59pm",
+                "T"  : "12:00am - 11:59pm",
+                "W"  : "12:00am - 11:59pm",
+                "Th" : "12:00am - 11:59pm",
+                "F"  : "12:00am - 11:59pm",
+                "S"  : "12:00am - 11:59pm",
+                "Su" : "12:00am - 11:59pm"
+            },
+            "amenities" : {
+                "wifi"    : "yes",
+                "outlets" : "yes",
+                "food"    : "no",
+                "coffee"  : "no"
+            }
         },
         {
+            "_id"     : 3,
             "name"    : "Applied Physics and Mathematics Building, San Diego, CA, United States",
             "location": {
                 "latitude" : 32.879245,
                 "longitude": -117.241041
             },  
-            "hoursM"  : "12:00am - 11:59pm",
-            "hoursT"  : "12:00am - 11:59pm",
-            "hoursW"  : "12:00am - 11:59pm",
-            "hoursTh" : "12:00am - 11:59pm",
-            "hoursF"  : "12:00am - 11:59pm",
-            "hoursS"  : "12:00am - 11:59pm",
-            "hoursSu" : "12:00am - 11:59pm",
-            "wifi"    : "yes",
-            "outlets" : "yes",
-            "food"    : "no",
-            "coffee"  : "no"
+            "hours" : {
+                "M"  : "12:00am - 11:59pm",
+                "T"  : "12:00am - 11:59pm",
+                "W"  : "12:00am - 11:59pm",
+                "Th" : "12:00am - 11:59pm",
+                "F"  : "12:00am - 11:59pm",
+                "S"  : "12:00am - 11:59pm",
+                "Su" : "12:00am - 11:59pm"
+            },
+            "amenities" : {
+                "wifi"    : "yes",
+                "outlets" : "yes",
+                "food"    : "no",
+                "coffee"  : "no"
+            }
         },
         {
+            "_id"     : 4,
             "name"    : "Biomedical Library, La Jolla, CA, United States",
             "location": {
                 "latitude" : 32.875464,
                 "longitude": -117.236864
             }, 
-            "hoursM"  : "8:00am - 12:00am",
-            "hoursT"  : "8:00am - 12:00am",
-            "hoursW"  : "8:00am - 12:00am",
-            "hoursTh" : "8:00am - 12:00am",
-            "hoursF"  : "8:00am - 6:00pm",
-            "hoursS"  : "10:00am - 6:00pm",
-            "hoursSu" : "12:00pm - 12:00am",
-            "wifi"    : "yes",
-            "outlets" : "yes",
-            "food"    : "no",
-            "coffee"  : "no"
+            "hours" : {
+                "M"  : "8:00am - 12:00am",
+                "T"  : "8:00am - 12:00am",
+                "W"  : "8:00am - 12:00am",
+                "Th" : "8:00am - 12:00am",
+                "F"  : "8:00am - 6:00pm",
+                "S"  : "10:00am - 6:00pm",
+                "Su" : "12:00pm - 12:00am"
+            },
+            "amenities" : {
+                "wifi"    : "yes",
+                "outlets" : "yes",
+                "food"    : "no",
+                "coffee"  : "no"
+            }
         },
         {
+            "_id"     : 5,
             "name"    : "Tapioca Express, Gilman Drive, La Jolla, CA",
             "location": {
                 "latitude" : 32.880626,
                 "longitude": -117.236027
             }, 
-            "hoursM"  : "9:30am - 12:00am",
-            "hoursT"  : "9:30am - 12:00am",
-            "hoursW"  : "9:30am - 12:00am",
-            "hoursTh" : "9:30am - 12:00am",
-            "hoursF"  : "9:30am - 6:00pm",
-            "hoursS"  : "11:30am - 12:00am",
-            "hoursSu" : "11:30am - 12:00am",
-            "wifi"    : "yes",
-            "outlets" : "no",
-            "food"    : "yes",
-            "coffee"  : "yes"            
+            "hours" : {
+                "M"  : "9:30am - 12:00am",
+                "T"  : "9:30am - 12:00am",
+                "W"  : "9:30am - 12:00am",
+                "Th" : "9:30am - 12:00am",
+                "F"  : "9:30am - 6:00pm",
+                "S"  : "11:30am - 12:00am",
+                "Su" : "11:30am - 12:00am"
+            },
+            "amenities" : {
+                "wifi"    : "yes",
+                "outlets" : "no",
+                "food"    : "yes",
+                "coffee"  : "yes"    
+            }        
+        },
+        {
+            "_id"     : 6,
+            "name"    : "Atkinson Hall, La Jolla, CA",
+            "location": {
+                "latitude" : 32.882499,
+                "longitude": -117.234683
+            }, 
+            "hours" : {
+                "M"  : "9:30am - 6:00pm",
+                "T"  : "9:30am - 6:00pm",
+                "W"  : "9:30am - 6:00pm",
+                "Th" : "9:30am - 6:00pm",
+                "F"  : "9:30am - 6:00pm",
+                "S"  : "Closed",
+                "Su" : "Closed"
+            },
+            "amenities" : {
+                "wifi"    : "yes",
+                "outlets" : "yes",
+                "food"    : "no",
+                "coffee"  : "yes"    
+            }        
+        },
+        {
+            "_id"     : 7,
+            "name"    : "Structural and Materials Engineering (SME) Building",
+            "location": {
+                "latitude" : 32.87984,
+                "longitude": -117.233158
+            }, 
+            "hours" : {
+                "M"  : "9:30am - 6:00pm",
+                "T"  : "9:30am - 6:00pm",
+                "W"  : "9:30am - 6:00pm",
+                "Th" : "9:30am - 6:00pm",
+                "F"  : "9:30am - 6:00pm",
+                "S"  : "Closed",
+                "Su" : "Closed"
+            },
+            "amenities" : {
+                "wifi"    : "yes",
+                "outlets" : "yes",
+                "food"    : "no",
+                "coffee"  : "no"    
+            }        
+        },
+        {
+            "_id"     : 8,
+            "name"    : "Cognitive Science Building, San Diego, CA",
+            "location": {
+                "latitude" : 32.880546,
+                "longitude": -117.239491
+            }, 
+            "hours" : {
+                "M"  : "9:30am - 6:00pm",
+                "T"  : "9:30am - 6:00pm",
+                "W"  : "9:30am - 6:00pm",
+                "Th" : "9:30am - 6:00pm",
+                "F"  : "9:30am - 6:00pm",
+                "S"  : "Closed",
+                "Su" : "Closed"
+            },
+            "amenities" : {
+                "wifi"    : "yes",
+                "outlets" : "yes",
+                "food"    : "no",
+                "coffee"  : "no"    
+            }        
+        },
+        {
+            "_id"     : 9,
+            "name"    : "Revelle Plaza, San Diego, CA",
+            "location": {
+                "latitude" : 32.8742629,
+                "longitude": -117.2406848
+            }, 
+            "hours" : {
+                "M"  : "9:30am - 6:00pm",
+                "T"  : "9:30am - 6:00pm",
+                "W"  : "9:30am - 6:00pm",
+                "Th" : "9:30am - 6:00pm",
+                "F"  : "9:30am - 6:00pm",
+                "S"  : "Closed",
+                "Su" : "Closed"
+            },
+            "amenities" : {
+                "wifi"    : "yes",
+                "outlets" : "yes",
+                "food"    : "yes",
+                "coffee"  : "yes"    
+            }        
+        },
+        {
+            "_id"     : 10,
+            "name"    : "Hi Thai, Gilman Drive, La Jolla, CA, United States",
+            "location": {
+                "latitude" : 32.877302,
+                "longitude": -117.240316
+            }, 
+            "hours" : {
+                "M"  : "8:00am - 9:00pm",
+                "T"  : "8:00am - 9:00pm",
+                "W"  : "8:00am - 9:00pm",
+                "Th" : "8:00am - 9:00pm",
+                "F"  : "8:00am - 9:00pm",
+                "S"  : "Closed",
+                "Su" : "Closed"
+            },
+            "amenities" : {
+                "wifi"    : "yes",
+                "outlets" : "yes",
+                "food"    : "yes",
+                "coffee"  : "yes"    
+            }        
+        },
+        {
+            "_id"     : 11,
+            "name"    : "Home Plate UCSD, San Diego, CA, United States",
+            "location": {
+                "latitude" : 32.885719,
+                "longitude": -117.240452
+            }, 
+            "hours" : {
+                "M"  : "10:30am - 10:00pm",
+                "T"  : "10:30am - 10:00pm",
+                "W"  : "10:30am - 10:00pm",
+                "Th" : "10:30am - 10:00pm",
+                "F"  : "10:30am - 10:00pm",
+                "S"  : "11:00am - 9:00pm",
+                "Su" : "Closed"
+            },
+            "amenities" : {
+                "wifi"    : "yes",
+                "outlets" : "yes",
+                "food"    : "yes",
+                "coffee"  : "yes"    
+            }        
         }
     ]
 }

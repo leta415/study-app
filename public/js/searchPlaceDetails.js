@@ -98,16 +98,16 @@ function findPlace(result) {
    var url = "https://www.google.com/maps/embed/v1/place?q=" + nameQuery + "&key=AIzaSyDQRjMnj-tHPC2FnAE8xhQ-HyoiUHeYQdQ";
    $("#place-details-map-iframe").attr("src", url);
    $("#place-details-name").html(placeObj.name);
-   $("#hours-times-m").html(placeObj.hoursM);
-   $("#hours-times-t").html(placeObj.hoursT);
-   $("#hours-times-w").html(placeObj.hoursW);
-   $("#hours-times-th").html(placeObj.hoursTh);
-   $("#hours-times-f").html(placeObj.hoursF);
-   $("#hours-times-s").html(placeObj.hoursS);
-   $("#hours-times-su").html(placeObj.hoursSu);
-   $("#amenity-val-wifi").html(placeObj.wifi);
-   $("#amenity-val-outlets").html(placeObj.outlets);
-   $("#amenity-val-coffee").html(placeObj.coffee);
-   $("#amenity-val-food").html(placeObj.food);
+   $("#hours-times-m").html(placeObj.hours.M);
+   $("#hours-times-t").html(placeObj.hours.T);
+   $("#hours-times-w").html(placeObj.hours.W);
+   $("#hours-times-th").html(placeObj.hours.Th);
+   $("#hours-times-f").html(placeObj.hours.F);
+   $("#hours-times-s").html(placeObj.hours.S);
+   $("#hours-times-su").html(placeObj.hours.Su);
+   $("#amenity-val-wifi").html(placeObj.amenities.wifi);
+   $("#amenity-val-outlets").html(placeObj.amenities.outlets);
+   $("#amenity-val-coffee").html(placeObj.amenities.coffee);
+   $("#amenity-val-food").html(placeObj.amenities.food);
    $("#place-details").css("display", "initial");
 }
