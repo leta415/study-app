@@ -220,8 +220,8 @@ app.get('/bookmark/:id', ensureAuthenticated, recent.bookmark);
 app.get('/deleteBookmark/:id', ensureAuthenticated, bookmarks.deleteBookmark );
 
 // Allows user to change their settings
-app.post('/settings/changeName', ensureAuthenticated, settings.change);
-
+app.post('/settings/changeName', ensureAuthenticated, settings.changeName);
+app.post('/settings/changeEmail', ensureAuthenticated, settings.changeEmail);
 //============END PASSPORT=================
 
 // Example route

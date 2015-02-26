@@ -20,19 +20,32 @@ exports.list = function(req, res) {
 };
 
 // Allows user to change their display name
-exports.change = function(req, res) {
+exports.changeName = function(req, res) {
 	console.log("Changing display name");
+	change(req, res, req.body.displayName);
+}
 
+// Allows user to change their display name
+exports.changeEmail = function(req, res) {
+	console.log("Changing email");
+	change(req, res, req.body.email);
+}
+
+// Allows user to change their password 
+// This one is more complicated
+
+// Keepin' it DRY
+var change = function(req, res, information) { // Update the display name only
+	console.log("I'm in mini function");
 	db.newPatchBuilder('local-users', req.user.username)
-	  .replace("displayName", req.body.displayName)
+	  .replace("displayName", information)
 	  .apply()
 	  .then(function (result) {
-	    console.log("Successfully changed display name");
+	    console.log("Successfully changed");
 
-		// Re-render the page
+		// Re-render the page to reflect new changes
 		db.get('local-users', req.user.username)
 		.then(function (result) {
-			console.log("race condition");
 			data = result.body;
 			data.pageName = "Settings";
 			res.render('settings', data);
@@ -44,17 +57,8 @@ exports.change = function(req, res) {
 			res.render('settings', empty);
 			console.log("failed");
 		})
-	  })
+	  }) // Fail on changing the display name
 	  .fail(function (err) {
-	    console.log("Something went wrong with changing display name");
+	    console.log("Something went wrong with changing field");
 	  })
-
-	// db.put('local-users', req.user.username, req.body)
-	// .then(function (result) {
-	// 	console.log("Successfully changed display name");
-	// })
-	// .fail(function (err) {
-	// 	console.log("Something went wrong with changing display name");
-	// })
-
 }
