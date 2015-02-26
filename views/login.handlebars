@@ -1,5 +1,13 @@
 <div class="container">
   <form class="form-signin" action="/login" id="login" method="post">
+    <!-- If there is an error message, render it -->
+    {{#if message}}
+      <div class="alert alert-danger alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      {{message}}
+      </div>
+    {{/if}}
+
     <h2 class="form-signin-heading">Log In</h2><br />
     <input type="username" name="username" class="form-control" placeholder="Username" required autofocus>
     <br />
