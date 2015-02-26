@@ -1,5 +1,6 @@
 var config = require('../config.js'), //config file contains all tokens and other private info
-    db = require('orchestrate')(config.db); //config.db holds Orchestrate token
+    db = require('orchestrate')(config.db),
+    bcrypt = require('bcryptjs'); //config.db holds Orchestrate token
 
 exports.list = function(req, res) {
 	// Find user's current settings in database
@@ -32,7 +33,13 @@ exports.changeEmail = function(req, res) {
 }
 
 // Allows user to change their password 
-// This one is more complicated
+exports.changePassword = function(req, res) {
+	console.log("Changing password");
+	console.log("changed password to: " + req.body.password);
+	var newPassword = bcrypt.hashSync(req.body.password, 8);
+	change(req, res, "password", newPassword);
+}
+
 
 // Keepin' it DRY
 var change = function(req, res, field, information) { // Update the display name only
