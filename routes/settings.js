@@ -22,23 +22,23 @@ exports.list = function(req, res) {
 // Allows user to change their display name
 exports.changeName = function(req, res) {
 	console.log("Changing display name");
-	change(req, res, req.body.displayName);
+	change(req, res, "displayName", req.body.displayName);
 }
 
 // Allows user to change their display name
 exports.changeEmail = function(req, res) {
 	console.log("Changing email");
-	change(req, res, req.body.email);
+	change(req, res, "email", req.body.email);
 }
 
 // Allows user to change their password 
 // This one is more complicated
 
 // Keepin' it DRY
-var change = function(req, res, information) { // Update the display name only
+var change = function(req, res, field, information) { // Update the display name only
 	console.log("I'm in mini function");
 	db.newPatchBuilder('local-users', req.user.username)
-	  .replace("displayName", information)
+	  .replace(field, information)
 	  .apply()
 	  .then(function (result) {
 	    console.log("Successfully changed");
