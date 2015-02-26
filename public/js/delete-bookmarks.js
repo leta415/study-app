@@ -13,6 +13,7 @@ $('a.btnDelete').on('click', function (e) {
     console.log("delete clicked");
     e.preventDefault();
     var id = $(this).closest('tr').data('id');
+    $('#location').html(id);
     $('#my1Modal').data('id', id).modal('show');
 });
 
