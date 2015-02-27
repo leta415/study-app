@@ -5,7 +5,7 @@
 
 exports.view = function(req, res) {
   res.render('index', {
-    layout: 'index',
+    layout: 'noBackButton',
     "menu-items": [
       {
         "name" : "Recent Spots",
