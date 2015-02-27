@@ -151,6 +151,10 @@ td > h5 > small {
   margin: 0 auto;
 }
 
+.form-signin-heading {
+	font-size: 18pt;
+}
+
 .top-search {
 	margin-top: 3%;
 }
@@ -259,5 +263,13 @@ td > h5 > small {
 }
 
 .transparent{
-	background:rgba(255,255,255,0.5);
+	background:rgba(255,255,255,0.7);
+	padding: 20px;
+	border-radius: 20px;
+}
+
+.title {
+	font-family: 'Pacifico', cursive;
+	font-size: 36pt;
+	text-align: center;
 }

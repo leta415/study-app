@@ -1,17 +1,10 @@
 var config = require('../config.js'), //config file contains all tokens and other private info
     db = require('orchestrate')(config.db); //config.db holds Orchestrate token
 
-// Get friends data
-var data;// = require('../public/json/friends.json');
-
-exports.viewFriends = function(req, res) {
-  res.render('friends', data);
-};
-
 exports.displayFriends = function(req,res){
 	db.get('friends', req.user.username)
 	.then(function(result){
-		data = result.body;
+		var data = result.body;
 		data.pageName = "Friends";		
 		console.log(data);
 		res.render('friends', data);
@@ -35,7 +28,7 @@ exports.search = function(req, res){
 		res.json(result.body.results[0].value);	
 	})
 	.fail(function(err){
-		console.log(err);
+		//console.log(err);
 	})
 };
 
@@ -62,11 +55,11 @@ exports.deleteFriend = function(req,res){
 			res.redirect('/friends');
 		})
 		.fail(function(err){
-			console.log(err);
+		//	console.log(err);
 		})
 	})
 	.fail(function(err){
-		console.log(err);
+	//	console.log(err);
 	})
 };
 
@@ -110,17 +103,41 @@ exports.add = function(req,res){
 				res.redirect('/friends');
 			})
 			.fail(function(err){
-				console.log(err);
+			//	console.log(err);
 			})
 		})
 		.fail(function(err){
-			console.log(err);
+		//	console.log(err);
+			console.log("user has not entered in any friends yet");
+			var id = Math.floor((Math.random() * 100) + 1);
+			temp["name"] = name;
+			temp["username"] = username;
+			temp["topics"] = recentDetails.studyDetails;
+			temp["location"] = recentDetails.location;
+			temp["locationDetail"] = recentDetails.locDetails;
+			temp["checkinTime"] = recentDetails.currentTime;
+			temp["id"] = id;
+			console.log(temp);
+			friends.push(temp);
+			var json = "{\"friends\": " + JSON.stringify(friends) + "}";  
+			console.log(json);
+			var jsonObj = JSON.parse(json);
+
+			db.put('friends', req.user.username ,jsonObj)
+			.then(function(result){
+				console.log("added friend " + name);
+				res.redirect('/friends');
+			})
+			.fail(function(err){
+			//	console.log(err);
+			console.log("Something went terribly wrong"); 
+			})
 		})
 		
 	})
 	.fail(function(err){
 		//user hasn't checked in anywhere yet
-		console.log(err);
+	//	console.log(err);
 		//add into user friends list
 		db.get('friends', req.user.username)
 		.then(function(result){
@@ -146,11 +163,35 @@ exports.add = function(req,res){
 				res.redirect('/friends');
 			})
 			.fail(function(err){
-				console.log(err);
+				//console.log(err);
 			})
 		})
 		.fail(function(err){
-			console.log(err);
+			//console.log(err);
+			console.log("user has not entered in any friends yet #2");
+			temp["name"] = name;
+			temp["username"] = username;
+			temp["topics"] = "";
+			temp["location"] = "";
+			temp["locationDetail"] = "";
+			temp["checkinTime"] = "";
+			var id = Math.floor((Math.random() * 100) + 1);
+			temp["id"] = id;
+			console.log(temp);
+			friends.push(temp);
+			var json = "{\"friends\": " + JSON.stringify(friends) + "}";  
+			console.log(json);
+			var jsonObj = JSON.parse(json);
+
+			db.put('friends', req.user.username ,jsonObj)
+			.then(function(result){
+				console.log("added friend " + name);
+				res.redirect('/friends');
+			})
+			.fail(function(err){
+				//console.log(err);
+			})
+
 		})
 	})
 };
