@@ -1,6 +1,7 @@
 var lastSearched; //Last place that was searched for by user
 var placeNames;
 var placeObj;
+var name;
 
 $(document).ready(function() {
     $.get('/getAllPlaceNames', getAllPlaceNamesCallback);
@@ -97,6 +98,8 @@ function findPlace(result) {
    var nameQuery = encodeURIComponent(placeObj.name.trim());
    var url = "https://www.google.com/maps/embed/v1/place?q=" + nameQuery + "&key=AIzaSyDQRjMnj-tHPC2FnAE8xhQ-HyoiUHeYQdQ";
    $("#place-details-map-iframe").attr("src", url);
+   name = placeObj.name;
+   console.log(name);
    $("#place-details-name").html(placeObj.name);
    $("#hours-times-m").html(placeObj.hours.M);
    $("#hours-times-t").html(placeObj.hours.T);
@@ -111,3 +114,28 @@ function findPlace(result) {
    $("#amenity-val-food").html(placeObj.amenities.food);
    $("#place-details").css("display", "initial");
 }
+
+
+//adding bookmarks
+$('a.btnMark').on('click', function (e) {
+    console.log("bookmark clicked");
+    e.preventDefault();
+    //var id = $('#place-details-name').val();
+    $('#location').html(name);
+    $('#bookmarkModal').data('id', name).modal('show');
+});
+
+$('#btnAdd').click(function (e) {
+    e.preventDefault();
+    console.log("confirm clicked");
+    var id = $('#bookmarkModal').data('id');
+    var url ='/bookmark/'+ id;
+
+    function refresh(json){
+        var id = json['name'];
+        $('#bookmarkExisted').data('id', id).modal('show');
+    }
+    $.get(url, refresh);
+
+    $('#bookmarkModal').modal('hide');
+});

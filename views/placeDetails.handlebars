@@ -1,3 +1,43 @@
+
+<!--modal for adding bookmarks -->
+<div id="bookmarkModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+          <h3 class="modal-title" id="myModalLabel">Bookmark</h3>
+      </div>
+      <div class="modal-body">
+          <p> Are you sure you want to bookmark <strong><span id="location"></span></strong>?</p>
+      </div>
+      <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" data-dismiss="modal" class="btn btn-primary" id="btnAdd">Confirm</button>
+      </div>
+    </div>
+  </div>
+</div> 
+<!-- End of modal -->
+
+<!--modal for warning already existed bookmark -->
+<div id="bookmarkExisted" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+          <h3 class="modal-title" id="myModalLabel">Oops</h3>
+      </div>
+      <div class="modal-body">
+          <p> You have already added this bookmark!</p>
+      </div>
+      <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div> 
+<!-- End of modal -->
+
 <div class="container">
       <!-- Search -->
       <div id="search-place-details-row" class="top-search row">
@@ -26,7 +66,7 @@
 
           <!-- Info -->
           <div class="place-details-inner col-xs-12 col-md-7">
-            <h3 id="place-details-name"></h3>
+            <h3 id="place-details-name"></h3><a href="#" class="btnMark btn btn-default" data-target="#bookmarkModal">Bookmark</a>
             <div id="hours-day-labels" class="col-xs-1 col-md-1">
               <h6>M</h6>
               <h6>T</h6>
