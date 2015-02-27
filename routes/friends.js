@@ -1,17 +1,10 @@
 var config = require('../config.js'), //config file contains all tokens and other private info
     db = require('orchestrate')(config.db); //config.db holds Orchestrate token
 
-// Get friends data
-var data;// = require('../public/json/friends.json');
-
-exports.viewFriends = function(req, res) {
-  res.render('friends', data);
-};
-
 exports.displayFriends = function(req,res){
 	db.get('friends', req.user.username)
 	.then(function(result){
-		data = result.body;
+		var data = result.body;
 		data.pageName = "Friends";		
 		console.log(data);
 		res.render('friends', data);
