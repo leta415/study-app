@@ -11,11 +11,11 @@
     }
 
     #place-details h6 {
-		font-size: 65%;
+		font-size: 70%;
 	}
 
     #place-details-overlay h6 {
-        font-size: 50%;
+        font-size: 65%;
     }
 }
 
@@ -256,4 +256,8 @@ td > h5 > small {
 	text-decoration: none;
 	color: #337ab7;
 	font-weight: bold;
+}
+
+.transparent{
+	background:rgba(255,255,255,0.5);
 }
