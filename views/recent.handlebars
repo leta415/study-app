@@ -67,10 +67,10 @@
     <div class="modal-content">
       <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-          <h3 class="modal-title" id="myModalLabel">Bookmark</h3>
+          <h3 class="modal-title" id="myModalLabel">Favorite</h3>
       </div>
       <div class="modal-body">
-          <p> Are you sure you want to bookmark <strong><span id="location"></span></strong>?</p>
+          <p> Are you sure you want to add <strong><span id="location"></span></strong> to your favorites?</p>
       </div>
       <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -90,7 +90,7 @@
           <h3 class="modal-title" id="myModalLabel">Oops</h3>
       </div>
       <div class="modal-body">
-          <p> You have already added this bookmark!</p>
+          <p> You have already added this place to your favorites!</p>
       </div>
       <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -114,7 +114,7 @@
           <tr class="btnMark" data-id="{{location}}">
             <td><strong><a class="placeName" href="#" data-toggle='modal' data-target="#place-detail-overlay">{{location}}</a></strong></td>
             <td>{{currentTime}}</td>
-            <td><a href="#" class="btnMark btn btn-default" data-target="#bookmarkModal">Bookmark</a></td>
+            <td><a href="#" class="btnMark btn btn-default" data-target="#bookmarkModal">Add to favorites</a></td>
           </tr>
           {{/each}}
         </tbody>

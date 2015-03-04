@@ -5,10 +5,10 @@
     <div class="modal-content">
       <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-          <h3 class="modal-title" id="myModalLabel">Bookmark</h3>
+          <h3 class="modal-title" id="myModalLabel">Favorite</h3>
       </div>
       <div class="modal-body">
-          <p> Are you sure you want to bookmark <strong><span id="location"></span></strong>?</p>
+          <p> Are you sure you want to add <strong><span id="location"></span></strong> to your faovirtes?</p>
       </div>
       <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -28,7 +28,7 @@
           <h3 class="modal-title" id="myModalLabel">Oops</h3>
       </div>
       <div class="modal-body">
-          <p> You have already added this bookmark!</p>
+          <p> You have already added this place to your favorites!</p>
       </div>
       <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -66,7 +66,7 @@
 
           <!-- Info -->
           <div class="place-details-inner col-xs-12 col-md-7">
-            <h3 id="place-details-name"></h3><a href="#" class="btnMark btn btn-default" data-target="#bookmarkModal">Bookmark</a>
+            <h3 id="place-details-name"></h3>
             <div id="hours-day-labels" class="col-xs-1 col-md-1">
               <h6>M</h6>
               <h6>T</h6>
@@ -85,6 +85,7 @@
               <h6 id="hours-times-s"></h6>
               <h6 id="hours-times-su"></h6>
             </div>
+            <div><a href="#" class="btnMark btn btn-default" data-target="#bookmarkModal">Add to favorites</a></div>
             <div id="amenity-labels" class="col-xs-3 col-md-2">
               <h6>Wi-Fi</h6>
               <h6>Outlets</h6>

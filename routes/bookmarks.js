@@ -28,12 +28,12 @@ exports.displayPlace = function(req, res) {
   .then(function (result) {
     data = result.body;
     data.bookmarks.reverse();
-    data.pageName = "Bookmarks";
+    data.pageName = "Favorites";
     res.render('bookmarks', data);
   })
   .fail(function (err) {
     var empty;
-    empty = {"pageName": "Bookmarks"};
+    empty = {"pageName": "Favorites"};
     res.render('bookmarks', empty);
     console.log("failed");
   })

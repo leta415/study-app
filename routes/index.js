@@ -23,7 +23,7 @@ exports.view = function(req, res) {
         "page" : "placeDetails"
       },
       {
-        "name" : "Bookmarks",
+        "name" : "Favorites",
         "img"  : "favorite.png",
         "page" : "bookmarks"
       },    
