@@ -18,7 +18,7 @@ exports.view = function(req, res) {
         "page" : "checkin"
       },
       {
-        "name" : "Place Details",
+        "name" : "Place Directory",
         "img"  : "place.png",
         "page" : "placeDetails"
       },
