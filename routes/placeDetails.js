@@ -4,7 +4,26 @@ var config = require('../config.js'), //config file contains all tokens and othe
 var data; // = require('../public/json/placesInfo.json');
 
 exports.viewGroups = function(req, res) {
-  res.render('placeDetails', {'pageName': 'Place Details'});
+   db.list('places')
+      .then(function (result) {
+         console.log("inside viewGroups");
+          var items = result.body.results;
+          var names = [];
+          for (var i = 0; i < items.length; i++) {
+            names[i] = items[i].value.name;
+          }
+
+          var json = JSON.stringify(names);
+          console.log(json);
+          json = "{\"pageName\": \"Place Details\", \"places\": " + json + "}";
+          console.log(json);
+          var newJson = JSON.parse(json);
+          res.render('placeDetails', newJson);
+      })
+      .fail(function (err) {
+         console.log(err);
+         res.send(500);
+      });
 };
 
 exports.getAllPlaceNames = function(req, res) {

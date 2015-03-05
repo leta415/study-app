@@ -109,6 +109,16 @@
 
       </div>
       <!-- End of place details -->
+
+      <br />
+      <div id="placeList">
+        <strong>Or click on a place below:</strong> <br /><br />
+        <ul class="list-group">
+        {{#each places}}
+          <li class="list-group-item"><a href="#" onclick="clickSearch('{{this}}')">{{this}}</a></li> 
+        {{/each}}
+        </ul>
+      </div>
 </div>
 
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places"></script>

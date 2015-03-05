@@ -92,6 +92,13 @@ function initializeSearchPlaces() {
    $("#search-place-details-input").focus();
 }
 
+function clickSearch(searchVal) {
+  // Find place info by name
+  //var getPlaceUrl = '/findPlaceByName/' + datum.value;
+  var getPlaceUrl = '/findPlaceByName/' + searchVal;
+  $.get(getPlaceUrl, findPlace);
+}
+
 // Find place by name
 function findPlace(result) {
    placeObj = result;
@@ -113,6 +120,7 @@ function findPlace(result) {
    $("#amenity-val-coffee").html(placeObj.amenities.coffee);
    $("#amenity-val-food").html(placeObj.amenities.food);
    $("#place-details").css("display", "initial");
+   $("#placeList").hide();
 }
 
 
