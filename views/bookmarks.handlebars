@@ -80,6 +80,7 @@
 
 <div class="container">
   <h3>Favorites</h3>
+  {{#if bookmarks}}
   <table class="table" id="bookmarksTable">
     <thead>
       <tr>
@@ -96,6 +97,18 @@
       {{/each}}
     </tbody>
   </table>  
+  {{else}}
+  <br />
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">You have not added anywhere to your favorites.</h3>
+    </div>
+    <div class="panel-body">
+      Your favorite study spots will appear on this page. <br />
+      Find a place to add to your favorites, <a href="/placeDetails">click here</a>.
+    </div>
+  </div>
+{{/if}}
 </div> <!--end of container -->
 
 <script src="/js/delete-bookmarks.js"></script>
