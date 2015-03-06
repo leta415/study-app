@@ -1,3 +1,42 @@
+<!--modal for adding bookmarks -->
+<div id="bookmarkModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+          <h3 class="modal-title" id="myModalLabel">Favorite</h3>
+      </div>
+      <div class="modal-body">
+          <p> Are you sure you want to add <strong><span id="location"></span></strong> to your favorites?</p>
+      </div>
+      <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" data-dismiss="modal" class="btn btn-primary" id="btnAdd">Confirm</button>
+      </div>
+    </div>
+  </div>
+</div> 
+<!-- End of modal -->
+
+<!--modal for warning already existed bookmark -->
+<div id="bookmarkExisted" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+          <h3 class="modal-title" id="myModalLabel">Oops</h3>
+      </div>
+      <div class="modal-body">
+          <p> You have already added this place to your favorites!</p>
+      </div>
+      <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div> 
+<!-- End of modal -->
+
 <div class="container">
 
       <!-- Search -->
@@ -28,14 +67,16 @@
       <div id="place-detail-overlay" class="modal fade" role="dialog">
         <div class="modal-dialog">
           <div class="modal-content">
+            <div class="modal-header row">
+              <h3 class="modal-title col-xs-9" id="place-details-name-overlay"></h3>
+              <button type="button" class="btn btn-default col-xs-3" data-dismiss="modal">Close</button>
+            </div>
               <div class="modal-body">
 
                   <!-- Place details -->
                   <div id="place-details-overlay" class="row" style="display:none">
-
                       <!-- Info -->
                       <div class="place-details-inner col-xs-12 col-md-8">
-                        <h3 id="place-details-name-overlay"></h3>
                         <div id="hours-day-labels-overlay" class="col-xs-1 col-md-1">
                           <h6>M</h6>
                           <h6>T</h6>
@@ -54,6 +95,7 @@
                           <h6 id="hours-times-s-overlay"></h6>
                           <h6 id="hours-times-su-overlay"></h6>
                         </div>
+                        <div><a href="#" class="btnMark btn btn-default" data-dismiss="modal" data-target="#bookmarkModal">Add to favorites</a></div>
                         <div id="amenity-labels-overlay" class="col-xs-3 col-md-3">
                           <h6>Wi-Fi</h6>
                           <h6>Outlets</h6>

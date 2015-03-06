@@ -1,4 +1,29 @@
 var origInfowindow;
+var name;
+
+//adding bookmarks
+$('a.btnMark').on('click', function (e) {
+    console.log("bookmark clicked");
+    e.preventDefault();
+    var id = $('#place-details-name-overlay').text();
+    $('#location').html(id);
+    $('#bookmarkModal').data('id', id).modal('show');
+});
+
+$('#btnAdd').click(function (e) {
+    e.preventDefault();
+    console.log("confirm clicked");
+    var id = $('#bookmarkModal').data('id');
+    var url ='/bookmark/'+ id;
+
+    function refresh(json){
+        var id = json['name'];
+        $('#bookmarkExisted').data('id', id).modal('show');
+    }
+    $.get(url, refresh);
+
+    $('#bookmarkModal').modal('hide');
+});
 
 // Initialize map
 (function() {
@@ -174,13 +199,13 @@ function initializeNearbyPlaces() {
         clickable: true,
         html: "<a href='#' onclick=\"" + jsStr + "\" data-toggle='modal' data-target='#place-detail-overlay' id='place" + index + "'><strong>" + obj.name +"</strong></a>"      
       });
-
+      
       google.maps.event.addListener(newMarker, 'click', function() {
         //this.info.open(map, newMarker);
         infoWindow.setContent(this.html);
         infoWindow.open(map, this);
       });
-
+      
       var placeID = "#place" + index;
       $(placeID).on('hidden', function() {
         $("#place-detail-overlay").modal('show');
