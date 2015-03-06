@@ -4,9 +4,6 @@ var config = require('../config.js'), //config file contains all tokens and othe
 var data; // = require('../public/json/placesInfo.json');
 
 exports.viewGroups = function(req, res) {
-  var rand_num = Math.random();
-
-  if (rand_num > 0.5) {
      db.list('places')
         .then(function (result) {
            console.log("inside viewGroups");
@@ -27,11 +24,6 @@ exports.viewGroups = function(req, res) {
            console.log(err);
            res.send(500);
         });
-    } else {
-      res.render('placeDetailsOrig', {
-        pageName : "Place Directory"
-      });
-    }
 };
 
 exports.getAllPlaceNames = function(req, res) {
