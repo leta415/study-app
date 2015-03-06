@@ -63,7 +63,7 @@
 
       <!-- Place details -->
       <div id="place-details" class="row" style="display:none">
-
+          <a href="/placeDetails">&#8592; Go back to the directory</a> <br />
           <!-- Info -->
           <div class="place-details-inner col-xs-12 col-md-7">
             <h3 id="place-details-name"></h3>
@@ -109,6 +109,16 @@
 
       </div>
       <!-- End of place details -->
+
+      <br />
+      <div id="placeList">
+        <strong>Or click on a place below:</strong> <br /><br />
+        <ul class="list-group">
+        {{#each places}}
+          <li class="list-group-item"><a href="#" onclick="clickSearch('{{this}}')">{{this}}</a></li> 
+        {{/each}}
+        </ul>
+      </div>
 </div>
 
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places"></script>

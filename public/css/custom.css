@@ -67,8 +67,17 @@
     }
 }
 
-body {
+html, body {
 	font-family: 'Lato', sans-serif;
+    height: 100%;
+}
+
+#login-container {
+    min-height: 100%;
+}
+
+#signup-container {
+    min-height: 100%;
 }
 
 .navbar-static-top {
@@ -108,6 +117,16 @@ body {
 
 #menu-container {
 	padding: 5% 5% 0px 5%;  /*top right bottom left*/
+    height: 100%;
+    min-height: 100%;
+}
+
+.vcenter {
+  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh; /* These two lines are counted as one :-)       */
+
+  display: flex;
+  align-items: center;
 }
 
 h3 {
