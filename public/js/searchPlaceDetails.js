@@ -73,6 +73,7 @@ function initializeSearchPlaces() {
     jQuery('#search-place-details-input').on('typeahead:selected', searchCallback);
 
     function searchCallback (e, datum) {
+        woopra.track("search_place");
         $('#place-details-not-found').css('display', 'none');
 
         // Return if same as last searched
@@ -93,6 +94,7 @@ function initializeSearchPlaces() {
 }
 
 function clickSearch(searchVal) {
+  woopra.track("list_click");
   // Find place info by name
   //var getPlaceUrl = '/findPlaceByName/' + datum.value;
   var getPlaceUrl = '/findPlaceByName/' + searchVal;
